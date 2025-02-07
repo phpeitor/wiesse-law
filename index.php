@@ -77,118 +77,99 @@ body  .qodef-widget-block-8c0222fa .qi-block-team-member.qodef-item-layout--info
 <script type="text/javascript" src="./js/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 
 <!-- OG: 3.2.3 -->
-<meta property="og:image" content="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/10/opengraph.png"><meta property="og:image:secure_url" content="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/10/opengraph.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="a"><meta property="og:image:type" content="image/png"><meta property="og:description" content="Knowledge and expertise You&#039;ve Come To The Right Place Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim..."><meta property="og:type" content="article"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Courtroom"><meta property="og:title" content="Main Home"><meta property="og:url" content="https://courtroom.qodeinteractive.com/"><meta property="og:updated_time" content="2023-10-12T08:55:54+00:00">
-<meta property="article:published_time" content="2023-07-21T08:38:08+00:00"><meta property="article:modified_time" content="2023-10-12T08:55:54+00:00"><meta property="article:author:username" content="admin">
-<meta property="twitter:partner" content="ogwp"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/10/opengraph.png"><meta property="twitter:image:alt" content="a"><meta property="twitter:title" content="Main Home"><meta property="twitter:description" content="Knowledge and expertise You&#039;ve Come To The Right Place Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor...."><meta property="twitter:url" content="https://courtroom.qodeinteractive.com/">
-<meta itemprop="image" content="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/10/opengraph.png"><meta itemprop="name" content="Main Home"><meta itemprop="description" content="Knowledge and expertise You&#039;ve Come To The Right Place Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim..."><meta itemprop="datePublished" content="2023-07-21"><meta itemprop="dateModified" content="2023-10-12T08:55:54+00:00"><meta itemprop="author" content="admin"><meta itemprop="tagline" content="Lawyer and Law Firm Theme">
+<meta property="og:image" content="./img/opengraph.png"><meta property="og:image:secure_url" content="./img/opengraph.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="a"><meta property="og:image:type" content="image/png"><meta property="og:description" content="Conocimiento y experiencia Ha venido al lugar correcto Para llegar al fondo del asunto, nadie debería practicar ningún tipo de trabajo a menos que obtenga algún beneficio de ello. No dejes que el dolor desaparezca. Criticará de placer, quiere ser un cabello, y en el dolor huye, y no hay nacimiento. A menos que sean cegados por la lujuria, no salen, son culpables los que abandonan sus deberes y ablandan su corazón..."><meta property="og:type" content="article"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Courtroom">
+<meta property="og:title" content="Main Home">
+<meta property="og:url" content="#">
+<meta property="twitter:partner" content="ogwp">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="./img/opengraph.png">
+<meta itemprop="image" content="./img/opengraph.png">
+<meta itemprop="name" content="Main Home"><meta itemprop="description" content="Conocimiento y experiencia Ha venido al lugar correcto Para llegar al fondo del asunto, nadie debería practicar ningún tipo de trabajo a menos que obtenga algún beneficio de ello. No dejes que el dolor desaparezca. Criticará de placer, quiere ser un cabello, y en el dolor huye, y no hay nacimiento. A menos que sean cegados por la lujuria, no salen, son culpables los que abandonan sus deberes y ablandan su corazón...">
+<meta itemprop="author" content="admin">
+<meta itemprop="tagline" content="Lawyer and Law Firm Theme">
 <meta property="profile:username" content="admin">
 <!-- /OG -->
 
-<link rel="https://api.w.org/" href="https://courtroom.qodeinteractive.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://courtroom.qodeinteractive.com/wp-json/wp/v2/pages/113" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://courtroom.qodeinteractive.com/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.7.1" />
-<meta name="generator" content="WooCommerce 8.2.0" />
-<link rel="canonical" href="https://courtroom.qodeinteractive.com/" />
-<link rel='shortlink' href='https://courtroom.qodeinteractive.com/' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://courtroom.qodeinteractive.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcourtroom.qodeinteractive.com%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://courtroom.qodeinteractive.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcourtroom.qodeinteractive.com%2F&#038;format=xml" />
-
-<!-- Google Tag Manager for WordPress by gtm4wp.com -->
-<!-- GTM Container placement set to automatic -->
-<script data-cfasync="false" data-pagespeed-no-defer>
-	var dataLayer_content = {"pagePostType":"frontpage","pagePostType2":"single-page","pagePostAuthor":"admin"};
-	dataLayer.push( dataLayer_content );
-</script>
-<script data-cfasync="false">
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KTQ2BTD');
-</script>
-<!-- End Google Tag Manager -->
-<!-- End Google Tag Manager for WordPress by gtm4wp.com -->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<meta name="generator" content="Elementor 3.16.5; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<meta name="generator" content="Elementor 3.16.5; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
 <meta name="generator" content="Powered by Slider Revolution 6.6.16 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-<link rel="icon" href="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/07/fav-new-100x100.png" sizes="32x32" />
-<link rel="icon" href="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/07/fav-new-300x300.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/07/fav-new-300x300.png" />
-<meta name="msapplication-TileImage" content="https://courtroom.qodeinteractive.com/wp-content/uploads/2023/07/fav-new-300x300.png" />
-<script>function setREVStartSize(e){
-			//window.requestAnimationFrame(function() {
-				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
-				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
-				try {
-					var pw = document.getElementById(e.c).parentNode.offsetWidth,
-						newh;
-					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
-					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
-					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
-					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
-					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
-					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
-					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
-					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
-					if(e.layout==="fullscreen" || e.l==="fullscreen")
-						newh = Math.max(e.mh,window.RSIH);
-					else{
-						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
-						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
-						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
-											
-						var nl = new Array(e.rl.length),
-							ix = 0,
-							sl;
-						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
-						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
-						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
-						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
-						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
-						sl = nl[0];
-						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
-						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
-						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
-					}
-					var el = document.getElementById(e.c);
-					if (el!==null && el) el.style.height = newh+"px";
-					el = document.getElementById(e.c+"_wrapper");
-					if (el!==null && el) {
-						el.style.height = newh+"px";
-						el.style.display = "block";
-					}
-				} catch(e){
-					console.log("Failure at Presize of Slider:" + e)
-				}
-			//});
-		  };</script>
+<link rel="icon" href="./img/fav-new-100x100.png" sizes="32x32" />
+<link rel="icon" href="./img/fav-new-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="./img/fav-new-300x300.png" />
+<meta name="msapplication-TileImage" content="./img/fav-new-300x300.png" />
+<script>
+function setREVStartSize(e){
+	//window.requestAnimationFrame(function() {
+		window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+		window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+		try {
+			var pw = document.getElementById(e.c).parentNode.offsetWidth,
+				newh;
+			pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+			e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+			e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+			e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+			e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+			e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+			e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+			e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+			if(e.layout==="fullscreen" || e.l==="fullscreen")
+				newh = Math.max(e.mh,window.RSIH);
+			else{
+				e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+				for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+				e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+				e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+				for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+									
+				var nl = new Array(e.rl.length),
+					ix = 0,
+					sl;
+				e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+				e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+				e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+				e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+				for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+				sl = nl[0];
+				for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+				var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+				newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+			}
+			var el = document.getElementById(e.c);
+			if (el!==null && el) el.style.height = newh+"px";
+			el = document.getElementById(e.c+"_wrapper");
+			if (el!==null && el) {
+				el.style.height = newh+"px";
+				el.style.display = "block";
+			}
+		} catch(e){
+			console.log("Failure at Presize of Slider:" + e)
+		}
+	//});
+	};
+</script>
 </head>
 <body class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-113 theme-courtroom qi-blocks-1.2.3 qodef-gutenberg--no-touch qode-framework-1.2.2 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.6.3 qodef-back-to-top--enabled qodef-fullscreen-menu--hide-logo  qodef-content-behind-header qodef-header--divided qodef-header-appearance--sticky qodef-content--behind-header qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default courtroom-core-1.0 courtroom-1.0 qodef-content-grid-1400 qodef-search--covers-header elementor-default elementor-kit-4 elementor-page elementor-page-113" itemscope itemtype="https://schema.org/WebPage">
-	
-<!-- GTM Container placement set to automatic -->
-<!-- Google Tag Manager (noscript) -->
-				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTQ2BTD" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><a class="skip-link screen-reader-text" href="#qodef-page-content">Skip to the content</a>	<div id="qodef-page-wrapper" class="">
+
+ <a class="skip-link screen-reader-text" href="#qodef-page-content">Skip to the content</a>	
+ <div id="qodef-page-wrapper" class="">
 			<div id="qodef-top-area">
 		<div id="qodef-top-area-inner" class="qodef-skin--light">
 				<div class="qodef-widget-holder qodef--left">
 		<div id="block-25" class="widget widget_block widget_text qodef-top-bar-widget">
-<p class="has-text-color" style="color:#ede8e1;font-size:14px;font-style:normal;font-weight:300;letter-spacing:0px">Monday to Friday 9:00 – 20:00</p>
+<p class="has-text-color" style="color:#ede8e1;font-size:14px;font-style:normal;font-weight:300;letter-spacing:0px">Lunes a Viernes 09:00 – 20:00</p>
 </div><div id="courtroom_core_svg_icon-2" class="widget widget_courtroom_core_svg_icon qodef-top-bar-widget">				<div class="qodef-svg-icon-widget  ">
-										<div class="qodef-m-holder" style="align-items:center">
+					<div class="qodef-m-holder" style="align-items:center">
 						<div class="qodef-m-icon" >
 							<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4">
-  
-    
-    
-  
   <path d="M3.672,2l-1.7,1.679L0.278,2l1.7-1.68Z" />
 </svg>
 						</div>
 											</div>
 									</div>
+
 				</div><div id="block-26" class="widget widget_block widget_text qodef-top-bar-widget">
-<p class="has-text-color" style="color:#ede8e1;font-size:14px;font-style:normal;font-weight:300;letter-spacing:0px"><a href="tel:00123456789">123.4567.8910</a></p>
+<p class="has-text-color" style="color:#ede8e1;font-size:14px;font-style:normal;font-weight:300;letter-spacing:0px"><a href="tel:00123456789">+51 971 056 719</a></p>
 </div>	</div>
 	<div class="qodef-widget-holder qodef--right">
 		<div id="block-29" class="widget widget_block widget_text qodef-top-bar-widget">
@@ -238,7 +219,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<nav class="qodef-header-navigation" role="navigation" aria-label="Divided Left Menu">
 		<ul id="menu-divided-left-menu" class="menu"><li id="menu-item-1573" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1573 qodef--hide-link qodef-menu-item--narrow"><a href="#" onclick="JavaScript: return false;"><span class="qodef-menu-item-text">Home<svg class="qodef-svg--menu-arrow qodef-menu-item-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path d="M 13.8,24.196c 0.39,0.39, 1.024,0.39, 1.414,0l 6.486-6.486c 0.196-0.196, 0.294-0.454, 0.292-0.71 c0-0.258-0.096-0.514-0.292-0.71L 15.214,9.804c-0.39-0.39-1.024-0.39-1.414,0c-0.39,0.39-0.39,1.024,0,1.414L 19.582,17 L 13.8,22.782C 13.41,23.172, 13.41,23.806, 13.8,24.196z"></path></svg></span></a>
 <div class="qodef-drop-down-second"><div class="qodef-drop-down-second-inner"><ul class="sub-menu">
-	<li id="menu-item-1571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-113 current_page_item menu-item-1571"><a href="https://courtroom.qodeinteractive.com/"><span class="qodef-menu-item-text">Main Home</span></a></li>
+	<li id="menu-item-1571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-113 current_page_item menu-item-1571"><a href="#"><span class="qodef-menu-item-text">Main Home</span></a></li>
 	<li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1572"><a href="https://courtroom.qodeinteractive.com/legal-advisory/"><span class="qodef-menu-item-text">Legal Advisory</span></a></li>
 	<li id="menu-item-2205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2205"><a href="https://courtroom.qodeinteractive.com/law-firm/"><span class="qodef-menu-item-text">Law Firm</span></a></li>
 	<li id="menu-item-2206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2206"><a href="https://courtroom.qodeinteractive.com/legal-consultant/"><span class="qodef-menu-item-text">Legal Consultant</span></a></li>
