@@ -615,23 +615,23 @@ function setREVStartSize(e){
 		</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-6c53248 e-con-full e-flex e-con e-parent" data-id="6c53248" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;}" data-core-v316-plus="true">
+		<div class="elementor-element elementor-element-6c53248 e-con-full e-flex e-con e-parent" data-id="6c53248" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;}" data-core-v316-plus="true" >
 				</div>
-		<div class="elementor-element elementor-element-d89dcb7 e-con-full qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--right e-flex e-con e-parent" data-id="d89dcb7" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}" data-core-v316-plus="true">
-		<div class="elementor-element elementor-element-275fc11 e-con-full e-flex e-con e-child" data-id="275fc11" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-				<div class="elementor-element elementor-element-4f7a20c elementor-widget__width-initial elementor-widget elementor-widget-courtroom_core_icon_with_text" data-id="4f7a20c" data-element_type="widget" data-widget_type="courtroom_core_icon_with_text.default">
+		<div class="elementor-element elementor-element-d89dcb7 e-con-full qodef-elementor-content-grid qodef-extended-grid qodef-extended-grid--right e-flex e-con e-parent" data-id="d89dcb7" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}" data-core-v316-plus="true" id="services" >
+		<div class="elementor-element elementor-element-275fc11 e-con-full e-flex e-con e-child" data-id="275fc11" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}" >
+				<div class="elementor-element elementor-element-4f7a20c elementor-widget__width-initial elementor-widget elementor-widget-courtroom_core_icon_with_text" data-id="4f7a20c" data-element_type="widget" data-widget_type="courtroom_core_icon_with_text.default" >
 				<div class="elementor-widget-container">
 			<div class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--before-title qodef--custom-icon qodef--retina">
-	<div class="qodef-m-content">
+	<div class="qodef-m-content" >
 			<h6 class="qodef-m-title" >
 					<span class="qodef-m-title-inner">
 				<span class="qodef-m-icon-wrapper" style="margin-right: -10px">
 					<img loading="lazy" decoding="async" width="34" height="34" src="./img/check-box-h2.png" class="attachment-full size-full" alt="a" />				</span>
 				<span class="qodef-m-title-text">
-					Defensa del Consumidor			</span>
+					Derecho Civil</span>
 			</span>
 			</h6>
-			<p class="qodef-m-text" style="text-align: justify;">Asesoramos en la protección y defensa de los derechos del consumidor, ofreciendo una consultoría especializada que abarca desde la interpretación de normativas hasta la resolución de conflictos con proveedores y la gestión de reclamos en todos los sectores del mercado.</p>
+			<p class="qodef-m-text" style="text-align: justify;">Nuestra área de Derecho Civil tiene un enfoque altamente especializado en la asesoría, diseño, negociación y estructuración de contratos comerciales y civiles complejos.</p>
 	</div>
 </div>
 		</div>
@@ -1337,7 +1337,7 @@ function setREVStartSize(e){
 			<div class="qodef-grid qodef-layout--columns qodef-responsive--custom qodef-col-num--1 qodef-alignment--center" >
 				<div class="qodef-grid-inner">
 											<div class="qodef-grid-item">
-							<div id="block-68" class="widget widget_block" data-area="qodef-footer-bottom-area-column-1"><div><p>© 2023 <a class="qodef--underline-link" href="#footer" target="_blank" rel="noreferrer noopener" >Wiesse & Consultores</a>, All Rights Reserved</p></div></div>						</div>
+							<div id="block-68" class="widget widget_block" data-area="qodef-footer-bottom-area-column-1"><div><p>© <span id="currentYear"></span> <a class="qodef--underline-link" href="#footer" target="_blank" rel="noreferrer noopener" >Wiesse & Consultores</a>, All Rights Reserved</p></div></div>						</div>
 									</div>
 			</div>
 		</div>
@@ -1582,5 +1582,14 @@ var qodefElementorContainerGlobal = {"vars":{"elementorContainerHandler":{"6c532
 
 		if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
 	</script>
+	
+	<script>
+		document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+		jQuery("#menu-item-6320, .menu-item-6320").on("click", function() {
+			jQuery("body").toggleClass("qodef-side-area--opened qodef-side-area-animate--in");
+		});
+
+    </script>
 </body>
 </html>
