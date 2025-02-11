@@ -32,6 +32,15 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		background: none !important;
 		padding: 0 !important;
 	}
+
+	mark {
+		background-color: rgba(0, 123, 255, 0.3); 
+		color: black;
+		font-weight: bold;
+		padding: 2px;
+		border-radius: 3px;
+	}
+
 </style>
 <style id='wp-block-library-inline-css' type='text/css'>
 :root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color)}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
@@ -287,10 +296,12 @@ function setREVStartSize(e){
 </div>	</div>
 
 		</div>
-		<form action="#" class="qodef-search-cover-form" method="get">
+
+<form action="#" class="qodef-search-cover-form" method="get">
 	<div class="qodef-m-inner">
 		<div class="qodef-m-form-field-wrapper">
-			<svg class="qodef-svg--search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.33" height="17.33" viewBox="3.32 3.27 17.33 17.33" xml:space="preserve"><g><path d="M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z"/><line x1="20" y1="20" x2="16.13" y2="16.13"/></g></svg>			<input type="text" name="s" class="qodef-m-form-field" autocomplete="off" required/>
+			<svg class="qodef-svg--search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.33" height="17.33" viewBox="3.32 3.27 17.33 17.33" xml:space="preserve"><g><path d="M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z"/><line x1="20" y1="20" x2="16.13" y2="16.13"/></g></svg>			
+			<input type="text" name="s" class="qodef-m-form-field" autocomplete="off" required/>
 			<a href="javascript:void(0)"  class="qodef-opener-icon qodef-m qodef-source--predefined qodef-m-close"  >
 	<span class="qodef-m-icon ">
 		<svg class="qodef-svg--close" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"
@@ -299,9 +310,10 @@ function setREVStartSize(e){
 		</div>
 	</div>
 </form>
+
 	</div>
 </div>
-<form action="https://courtroom.qodeinteractive.com/" class="qodef-search-cover-form" method="get">
+<form action="#" class="qodef-search-cover-form" method="get">
 	<div class="qodef-m-inner">
 		<div class="qodef-m-form-field-wrapper">
 			<svg class="qodef-svg--search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.33" height="17.33" viewBox="3.32 3.27 17.33 17.33" xml:space="preserve"><g><path d="M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z"/><line x1="20" y1="20" x2="16.13" y2="16.13"/></g></svg>			<input type="text" name="s" class="qodef-m-form-field" autocomplete="off" required/>
@@ -1232,12 +1244,12 @@ function setREVStartSize(e){
 		</div>
 				</div>
 				<div class="elementor-element elementor-element-a28ee03 elementor-widget elementor-widget-courtroom_core_button" data-id="a28ee03" data-element_type="widget" data-widget_type="courtroom_core_button.default">
-				<div class="elementor-widget-container">
-			<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--outlined  qodef-html--link" href="" target="_self"  >
+<div class="elementor-widget-container">
+	<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--outlined  qodef-html--link" href="https://wa.me/51971056719" target="_blank"  >
 	<!--<span class="qodef-m-text">Request Appoitment</span>-->
 	<span class="qodef-icon-elegant-icons icon_phone"></span>
-</a>
-		</div>
+	</a>
+</div>
 				</div>
 				</div>
 							</div>
@@ -1492,11 +1504,11 @@ var qodefQiAddonsGlobal = {"vars":{"adminBarHeight":0,"iconArrowLeft":"<svg  xml
 var qodefGlobal = {"vars":{"adminBarHeight":0,"iconArrowLeft":"<svg class=\"qodef-svg--slider-arrow-left\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 26 50.9\" xml:space=\"preserve\"><polyline points=\"25.6,0.4 0.7,25.5 25.6,50.6 \" \/><\/svg>","iconArrowRight":"<svg class=\"qodef-svg--slider-arrow-right\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 26 50.9\" xml:space=\"preserve\"><polyline points=\"0.4,50.6 25.3,25.5 0.4,0.4 \" \/><\/svg>","iconClose":"<svg class=\"qodef-svg--close\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"26px\" height=\"26px\"\n     viewBox=\"0 0 26 26\" style=\"enable-background:new 0 0 26 26;\" xml:space=\"preserve\"><line x1=\"25\" y1=\"1\" x2=\"1\" y2=\"25\"\/><line x1=\"1\" y1=\"1\" x2=\"25\" y2=\"25\"\/><\/svg>","qodefStickyHeaderScrollAmount":1100,"topAreaHeight":40,"restUrl":"https:\/\/courtroom.qodeinteractive.com\/wp-json\/","restNonce":"1e35ba01ce","paginationRestRoute":"courtroom\/v1\/get-posts","iconSearch":"<svg class=\"qodef-svg--search\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" width=\"17.33\" height=\"17.33\" viewBox=\"3.32 3.27 17.33 17.33\" xml:space=\"preserve\"><g><path d=\"M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z\"\/><line x1=\"20\" y1=\"20\" x2=\"16.13\" y2=\"16.13\"\/><\/g><\/svg>","headerHeight":92,"mobileHeaderHeight":70}};
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-content/themes/courtroom/assets/js/main.min.js?ver=6.7.1" id="courtroom-main-js-js"></script>
+<script type="text/javascript" src="./js/main2.min.js?ver=6.7.1" id="courtroom-main-js-js"></script>
 <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyBdlcwMAqxaM_LFaNf9VrCdqJRFYmrvjSw&amp;callback=qodefEmptyCallback&amp;ver=6.7.1" id="google-map-api-js"></script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-includes/js/underscore.min.js?ver=1.13.7" id="underscore-js"></script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-content/plugins/courtroom-core/inc/maps/assets/js/custom-marker.js?ver=6.7.1" id="courtroom-core-map-custom-marker-js"></script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-content/plugins/courtroom-core/inc/maps/assets/js/markerclusterer.js?ver=6.7.1" id="markerclusterer-js"></script>
+<script type="text/javascript" src="./js/underscore.min.js?ver=1.13.7" id="underscore-js"></script>
+<script type="text/javascript" src="./js/custom-marker.js?ver=6.7.1" id="courtroom-core-map-custom-marker-js"></script>
+<script type="text/javascript" src="./js/markerclusterer.js?ver=6.7.1" id="markerclusterer-js"></script>
 <script type="text/javascript" id="courtroom-core-google-map-js-extra">
 /* <![CDATA[ */
 var qodefMapsVariables = {"global":{"mapStyle":[{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]}],"mapZoom":"12%","mapScrollable":false,"mapDraggable":true,"streetViewControl":true,"zoomControl":true,"mapTypeControl":true,"fullscreenControl":true,"geolocationTitle":"Your location is here"},"multiple":[]};
@@ -1517,13 +1529,9 @@ var qodefMapsVariables = {"global":{"mapStyle":[{"featureType":"administrative.l
 var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" id="mediaelement-core-js"></script>
-<script type="text/javascript" src="https://courtroom.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.7.1" id="mediaelement-migrate-js"></script>
-<script type="text/javascript" id="mediaelement-js-extra">
-/* <![CDATA[ */
-var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
-/* ]]> */
-</script>
+<script type="text/javascript" src="./js/mediaelement-and-player.min.js?ver=4.2.17" id="mediaelement-core-js"></script>
+<script type="text/javascript" src="./js/mediaelement-migrate.min.js?ver=6.7.1" id="mediaelement-migrate-js"></script>
+
 <script type="text/javascript" src="./js/wp-mediaelement.min.js?ver=6.7.1" id="wp-mediaelement-js"></script>
 <script type="text/javascript" src="./js/vimeo.min.js?ver=4.2.17" id="mediaelement-vimeo-js"></script>
 <script type="text/javascript" src="./js/webpack.runtime.min.js?ver=3.16.5" id="elementor-webpack-runtime-js"></script>
@@ -1625,6 +1633,30 @@ var qodefElementorContainerGlobal = {"vars":{"elementorContainerHandler":{"6c532
 			jQuery("body").toggleClass("qodef-side-area--opened qodef-side-area-animate--in");
 		});
 
+		document.addEventListener("DOMContentLoaded", function () {
+			const urlParams = new URLSearchParams(window.location.search);
+			const searchTerm = urlParams.get("s");
+
+			if (searchTerm) {
+				highlightText(document.body, searchTerm);
+			}
+		});
+
+		function highlightText(element, searchTerm) {
+			if (element.hasChildNodes()) {
+				element.childNodes.forEach(child => highlightText(child, searchTerm));
+			} else if (element.nodeType === Text.TEXT_NODE) {
+				const regex = new RegExp(searchTerm, "gi");
+				const matches = element.textContent.match(regex);
+				if (matches) {
+					const span = document.createElement("span");
+					span.innerHTML = element.textContent.replace(regex, match => `<mark>${match}</mark>`);
+					span.style.backgroundColor = "yellow";
+					span.style.color = "black"; 
+					element.replaceWith(span);
+				}
+			}
+		}
     </script>
 </body>
 </html>
