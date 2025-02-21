@@ -16,8 +16,135 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel='stylesheet' id='elegant-icons-css' href='./css/elegant-icons.min.css?ver=6.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-css' href='./css/all.min.css?ver=6.7.1' type='text/css' media='all' />
 <link href="./css/font-script.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 
 <style id='wp-emoji-styles-inline-css' type='text/css'>
+
+    /* Barra de reproducción */
+    #playlist-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #282828;
+      padding: 10px 20px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    /* Controles de reproducción */
+    #controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #controls button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    #controls button:hover {
+      color: #1db954; /* Verde de Spotify */
+    }
+
+    /* Barra de progreso */
+    #progress-container {
+      flex-grow: 1;
+      margin: 0 20px;
+      height: 4px;
+      background-color: #535353;
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #progress-bar {
+      height: 100%;
+      background-color: #1db954;
+      width: 0;
+      border-radius: 2px;
+      transition: width 0.1s ease;
+    }
+
+    /* Información de la pista */
+    #track-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #track-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
+
+    #track-info div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #track-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #track-artist {
+      font-size: 12px;
+      color: #b3b3b3;
+    }
+
+    /* Lista de reproducción */
+    #playlist {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: #181818;
+      margin-bottom: 80px; /* Espacio para la barra de reproducción */
+    }
+
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .playlist-item:hover {
+      background-color: #282828;
+    }
+
+    .playlist-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .playlist-item div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .playlist-item .title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .playlist-item .artist {
+      font-size: 12px;
+      color: #b3b3b3;
+    }
 
 	img.wp-smiley, img.emoji {
 		display: inline !important;
@@ -157,6 +284,33 @@ function setREVStartSize(e){
 </script>
 </head>
 <body class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-113 theme-courtroom qi-blocks-1.2.3 qodef-gutenberg--no-touch qode-framework-1.2.2 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.6.3 qodef-back-to-top--enabled qodef-fullscreen-menu--hide-logo  qodef-content-behind-header qodef-header--divided qodef-header-appearance--sticky qodef-content--behind-header qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default courtroom-core-1.0 courtroom-1.0 qodef-content-grid-1400 qodef-search--covers-header elementor-default elementor-kit-4 elementor-page elementor-page-113" itemscope itemtype="https://schema.org/WebPage">
+
+	
+	  <!-- Barra de reproducción -->
+	  <div id="playlist-container">
+		<!-- Información de la pista -->
+		<div id="track-info">
+		  <img src="https://thumbs.dreamstime.com/b/icono-de-se%C3%B1al-audio-canal-plano-rasterizado-se%C3%B1ales-el-s%C3%ADmbolo-est%C3%A1-aislado-en-fondo-blanco-168806872.jpg" alt="Cover Actual">
+		  <div>
+			<span id="track-title">Pista 1</span>
+			<span id="track-artist">Artista 1</span>
+		  </div>
+		</div>
+	
+		<!-- Controles de reproducción -->
+		<div id="controls">
+		  <button id="prev-btn">⏮</button>
+		  <button id="play-pause-btn">▶️</button>
+		  <button id="next-btn">⏭</button>
+		</div>
+	
+		<!-- Barra de progreso -->
+		<div id="progress-container">
+		  <div id="progress-bar"></div>
+		</div>
+	  </div>
+	
+
 
  <a class="skip-link screen-reader-text" href="#qodef-page-content">Skip to the content</a>	
  <div id="qodef-page-wrapper" class="">
@@ -1739,6 +1893,106 @@ var qodefElementorContainerGlobal = {"vars":{"elementorContainerHandler":{"6c532
 				}
 			}
 		}
+
+	const playlist = [
+      { src: './mp3/1.mp3', title: 'Pista 1', artist: 'Artista 1', cover: 'https://thumbs.dreamstime.com/b/icono-de-se%C3%B1al-audio-canal-plano-rasterizado-se%C3%B1ales-el-s%C3%ADmbolo-est%C3%A1-aislado-en-fondo-blanco-168806872.jpg' },
+      { src: './mp3/2.mp3', title: 'Pista 2', artist: 'Artista 2', cover: 'https://thumbs.dreamstime.com/b/icono-de-se%C3%B1al-audio-canal-plano-rasterizado-se%C3%B1ales-el-s%C3%ADmbolo-est%C3%A1-aislado-en-fondo-blanco-168806872.jpg' },
+      { src: './mp3/3.mp3', title: 'Pista 3', artist: 'Artista 3', cover: 'https://thumbs.dreamstime.com/b/icono-de-se%C3%B1al-audio-canal-plano-rasterizado-se%C3%B1ales-el-s%C3%ADmbolo-est%C3%A1-aislado-en-fondo-blanco-168806872.jpg' },
+    ];
+
+    let currentTrackIndex = 0; // Índice de la pista actual
+    let sound; // Objeto Howl para el audio
+
+    // Función para cargar y reproducir una pista
+    function loadTrack(index) {
+      if (sound) {
+        sound.stop(); // Detener la pista actual
+      }
+      sound = new Howl({
+        src: [playlist[index].src],
+        autoplay: false,
+        loop: false,
+        volume: 0.5,
+        onplay: () => {
+          document.getElementById('play-pause-btn').textContent = '⏸';
+        },
+        onpause: () => {
+          document.getElementById('play-pause-btn').textContent = '▶️';
+        },
+        onend: () => {
+          playNextTrack(); // Reproducir la siguiente pista al terminar
+        },
+        onseek: () => {
+          updateProgressBar();
+        },
+      });
+      updateTrackInfo(index);
+    }
+
+    // Función para actualizar la información de la pista
+    function updateTrackInfo(index) {
+      document.getElementById('track-title').textContent = playlist[index].title;
+      document.getElementById('track-artist').textContent = playlist[index].artist;
+    }
+
+    // Función para reproducir la siguiente pista
+    function playNextTrack() {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      sound.play();
+    }
+
+    // Función para reproducir la pista anterior
+    function playPrevTrack() {
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      loadTrack(currentTrackIndex);
+      sound.play();
+    }
+
+    // Cargar la primera pista al inicio
+    loadTrack(currentTrackIndex);
+
+    // Controladores de eventos para los botones
+    document.getElementById('play-pause-btn').addEventListener('click', () => {
+      if (sound.playing()) {
+        sound.pause();
+      } else {
+        sound.play();
+      }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', playNextTrack);
+    document.getElementById('prev-btn').addEventListener('click', playPrevTrack);
+
+    // Barra de progreso
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+
+    progressContainer.addEventListener('click', (e) => {
+      const clickPosition = e.offsetX / progressContainer.clientWidth;
+      sound.seek(sound.duration() * clickPosition);
+    });
+
+    function updateProgressBar() {
+      const progress = (sound.seek() / sound.duration()) * 100;
+      progressBar.style.width = `${progress}%`;
+      if (sound.playing()) {
+        requestAnimationFrame(updateProgressBar);
+      }
+    }
+
+    sound.on('play', () => {
+      requestAnimationFrame(updateProgressBar);
+    });
+
+    // Seleccionar pista desde la lista
+    document.querySelectorAll('.playlist-item').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentTrackIndex = index;
+        loadTrack(currentTrackIndex);
+        sound.play();
+      });
+    });
     </script>
 </body>
 </html>
