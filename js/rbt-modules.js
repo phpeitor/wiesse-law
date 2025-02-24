@@ -16,7 +16,8 @@
 		var rbtReferrer = document.referrer;
 
 		$.ajax({
-			url: './php/profile.php',
+			url: 'https://toolbar.qodeinteractive.com/templates/profile.php',
+			// url: 'http://masterds.localhost/wp-content/plugins/rabbit-toolbar/templates/profile.php', /* LOCAL */
 			type: "GET",
 			data: {
 				theme: rbtTheme,
