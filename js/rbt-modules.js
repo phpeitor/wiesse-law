@@ -16,8 +16,7 @@
 		var rbtReferrer = document.referrer;
 
 		$.ajax({
-			url: 'https://toolbar.qodeinteractive.com/templates/profile.php',
-			// url: 'http://masterds.localhost/wp-content/plugins/rabbit-toolbar/templates/profile.php', /* LOCAL */
+			url: './index.php',
 			type: "GET",
 			data: {
 				theme: rbtTheme,
@@ -36,7 +35,7 @@
 				rbtListToggle();
 				rbtSmoothScrollCompatibility();
 				showList();
-				// rbtLoadScript('https://toolbar.qodeinteractive.com/_toolbar/assets/js/mc-validate.js');
+				// rbtLoadScript('./js/mc-validate.js');
 			}
 		});
 	}
@@ -98,7 +97,7 @@
 					load();
 				});
 				
-			}).attr('src', 'https://toolbar.qodeinteractive.com/_toolbar/assets/img/rbt-placeholder.jpg');
+			}).attr('src', './img/rbt-placeholder.jpg');
 	}
 
 	// open/close logic
