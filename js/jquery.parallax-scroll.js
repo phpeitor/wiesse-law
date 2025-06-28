@@ -183,3 +183,48 @@ var ParallaxScroll = {
         }
     }
 };
+
+/* <![CDATA[ */
+    var qodefGlobal = {
+        vars: {
+            adminBarHeight: 0,
+            iconArrowLeft:
+            '<svg class="qodef-svg--slider-arrow-left" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 26 50.9" xml:space="preserve"><polyline points="25.6,0.4 0.7,25.5 25.6,50.6 " \/><\/svg>',
+            iconArrowRight:
+            '<svg class="qodef-svg--slider-arrow-right" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 26 50.9" xml:space="preserve"><polyline points="0.4,50.6 25.3,25.5 0.4,0.4 " \/><\/svg>',
+            iconClose:
+            '<svg class="qodef-svg--close" xmlns="http:\/\/www.w3.org\/2000\/svg" width="26px" height="26px"\n     viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve"><line x1="25" y1="1" x2="1" y2="25"\/><line x1="1" y1="1" x2="25" y2="25"\/><\/svg>',
+            qodefStickyHeaderScrollAmount: 1100,
+            topAreaHeight: 40,
+            restUrl: ".\/wp-json\/",
+            restNonce: "1e35ba01ce",
+            paginationRestRoute: "courtroom\/v1\/get-posts",
+            iconSearch:
+            '<svg class="qodef-svg--search" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" width="17.33" height="17.33" viewBox="3.32 3.27 17.33 17.33" xml:space="preserve"><g><path d="M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z"\/><line x1="20" y1="20" x2="16.13" y2="16.13"\/><\/g><\/svg>',
+            headerHeight: 92,
+            mobileHeaderHeight: 70,
+        },
+    };
+
+    var qodefQiAddonsGlobal = {
+        vars: {
+            adminBarHeight: 0,
+            iconArrowLeft:
+            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0.5" y1="16" x2="33.5" y2="16"\/><line x1="0.3" y1="16.5" x2="16.2" y2="0.7"\/><line x1="0" y1="15.4" x2="16.2" y2="31.6"\/><\/svg>',
+            iconArrowRight:
+            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0" y1="16" x2="33" y2="16"\/><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"\/><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"\/><\/svg>',
+            iconClose:
+            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 9.1 9.1" xml:space="preserve"><g><path d="M8.5,0L9,0.6L5.1,4.5L9,8.5L8.5,9L4.5,5.1L0.6,9L0,8.5L4,4.5L0,0.6L0.6,0L4.5,4L8.5,0z"\/><\/g><\/svg>',
+        },
+    };
+
+    var qiBlocks = {
+        vars: {
+            arrowLeftIcon:
+            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0.5" y1="16" x2="33.5" y2="16"\/><line x1="0.3" y1="16.5" x2="16.2" y2="0.7"\/><line x1="0" y1="15.4" x2="16.2" y2="31.6"\/><\/svg>',
+            arrowRightIcon:
+            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0" y1="16" x2="33" y2="16"\/><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"\/><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"\/><\/svg>',
+            closeIcon:
+            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 9.1 9.1" xml:space="preserve"><g><path d="M8.5,0L9,0.6L5.1,4.5L9,8.5L8.5,9L4.5,5.1L0.6,9L0,8.5L4,4.5L0,0.6L0.6,0L4.5,4L8.5,0z"\/><\/g><\/svg>',
+        },
+    };

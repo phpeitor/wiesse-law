@@ -41,11 +41,11 @@ rs-sbg-px { pointer-events: none }
 .rtl {	direction: rtl;}
 @font-face {
   font-family: 'revicons';
-  src: url('../fonts/revicons/revicons.eot?5510888');
-  src: url('../fonts/revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
-	   url('../fonts/revicons/revicons.woff?5510888') format('woff'),
-	   url('../fonts/revicons/revicons.ttf?5510888') format('truetype'),
-	   url('../fonts/revicons/revicons.svg?5510888#revicons') format('svg');
+  src: url('../fonts/revicons.eot?5510888');
+  src: url('../fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),
+	   url('../fonts/revicons.woff?5510888') format('woff'),
+	   url('../fonts/revicons.ttf?5510888') format('truetype'),
+	   url('../fonts/revicons.svg?5510888#revicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -1426,3 +1426,70 @@ rs-loader.spinner6{width:40px;height:40px;-webkit-transform:translate(-50%,-50%)
 	overflow: visible !important;
 	border: solid 5px red;
 } */
+
+.qodef-rev--navigation.tparrows {
+	cursor: pointer;
+	background: transparent;
+	width: 32px;
+	height: 59px;
+	position: relative;
+	display: inline-block;
+	z-index: 1000;
+}
+.qodef-rev--navigation.tparrows:before {
+	display: none;
+}
+.qodef-rev--navigation.tparrows.tp-leftarrow
+.qodef-svg--slider-arrow-left,
+.qodef-rev--navigation.tparrows.tp-rightarrow
+.qodef-svg--slider-arrow-right {
+	fill: none;
+	stroke: #fff;
+	transform: translateX(0);
+	transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.qodef-rev--navigation.tparrows.tp-leftarrow.rs-touchhover
+.qodef-svg--slider-arrow-left {
+	transform: translateX(-6px);
+}
+.qodef-rev--navigation.tparrows.tp-rightarrow.rs-touchhover
+.qodef-svg--slider-arrow-right {
+	transform: translateX(6px);
+}
+.qodef-rev--navigation.tparrows.tp-leftarrow
+.qodef-svg--slider-arrow-right {
+display: none;
+}
+.qodef-rev--navigation.tparrows.tp-rightarrow
+.qodef-svg--slider-arrow-left {
+		display: none;
+}
+.qodef--bullets .tp-bullet {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	opacity: 1;
+	transition: all 0.35s ease;
+	background-color: transparent;
+}
+.qodef--bullets .tp-bullet::after {
+	content: "";
+	display: block;
+	width: 5px;
+	height: 5px;
+	background-color: #fff;
+	transform: rotate(45deg);
+	transition: all 0.35s ease;
+}
+.qodef--bullets .tp-bullet.rs-touchhover,
+.qodef--bullets .tp-bullet.selected {
+	border-color: #ccbba3;
+}
+.qodef--bullets .tp-bullet.rs-touchhover::after,
+.qodef--bullets .tp-bullet.selected::after {
+	transform: rotate(135deg);
+}

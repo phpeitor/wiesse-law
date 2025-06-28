@@ -4645,74 +4645,6 @@
       type="text/css"
       media="all"
     />
-    <style id="rs-plugin-settings-inline-css" type="text/css">
-      .qodef-rev--navigation.tparrows {
-        cursor: pointer;
-        background: transparent;
-        width: 32px;
-        height: 59px;
-        position: relative;
-        display: inline-block;
-        z-index: 1000;
-      }
-      .qodef-rev--navigation.tparrows:before {
-        display: none;
-      }
-      .qodef-rev--navigation.tparrows.tp-leftarrow
-        .qodef-svg--slider-arrow-left,
-      .qodef-rev--navigation.tparrows.tp-rightarrow
-        .qodef-svg--slider-arrow-right {
-        fill: none;
-        stroke: #fff;
-        transform: translateX(0);
-        transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-      }
-      .qodef-rev--navigation.tparrows.tp-leftarrow.rs-touchhover
-        .qodef-svg--slider-arrow-left {
-        transform: translateX(-6px);
-      }
-      .qodef-rev--navigation.tparrows.tp-rightarrow.rs-touchhover
-        .qodef-svg--slider-arrow-right {
-        transform: translateX(6px);
-      }
-      .qodef-rev--navigation.tparrows.tp-leftarrow
-        .qodef-svg--slider-arrow-right {
-        display: none;
-      }
-      .qodef-rev--navigation.tparrows.tp-rightarrow
-        .qodef-svg--slider-arrow-left {
-        display: none;
-      }
-      .qodef--bullets .tp-bullet {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        border: 1px solid transparent;
-        border-radius: 50%;
-        opacity: 1;
-        transition: all 0.35s ease;
-        background-color: transparent;
-      }
-      .qodef--bullets .tp-bullet::after {
-        content: "";
-        display: block;
-        width: 5px;
-        height: 5px;
-        background-color: #fff;
-        transform: rotate(45deg);
-        transition: all 0.35s ease;
-      }
-      .qodef--bullets .tp-bullet.rs-touchhover,
-      .qodef--bullets .tp-bullet.selected {
-        border-color: #ccbba3;
-      }
-      .qodef--bullets .tp-bullet.rs-touchhover::after,
-      .qodef--bullets .tp-bullet.selected::after {
-        transform: rotate(135deg);
-      }
-    </style>
     <script
       type="text/javascript"
       src="./js/index.js?ver=5.8.1"
@@ -4723,20 +4655,6 @@
       src="./js/index_contact.js?ver=5.8.1"
       id="contact-form-7-js"
     ></script>
-    <script type="text/javascript" id="qi-blocks-main-js-extra">
-      /* <![CDATA[ */
-      var qiBlocks = {
-        vars: {
-          arrowLeftIcon:
-            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0.5" y1="16" x2="33.5" y2="16"\/><line x1="0.3" y1="16.5" x2="16.2" y2="0.7"\/><line x1="0" y1="15.4" x2="16.2" y2="31.6"\/><\/svg>',
-          arrowRightIcon:
-            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0" y1="16" x2="33" y2="16"\/><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"\/><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"\/><\/svg>',
-          closeIcon:
-            '<svg xmlns="http:\/\/www.w3.org\/2000\/svg" x="0px" y="0px" viewBox="0 0 9.1 9.1" xml:space="preserve"><g><path d="M8.5,0L9,0.6L5.1,4.5L9,8.5L8.5,9L4.5,5.1L0.6,9L0,8.5L4,4.5L0,0.6L0.6,0L4.5,4L8.5,0z"\/><\/g><\/svg>',
-        },
-      };
-      /* ]]> */
-    </script>
     <script
       type="text/javascript"
       src="./js/main.js?ver=6.7.1"
@@ -4761,43 +4679,16 @@
       src="./js/jquery.blockUI.min.js?ver=2.7.0-wc.8.2.0"
       id="jquery-blockui-js"
     ></script>
-
-    <script
-      type="text/javascript"
-      src="./js/add-to-cart.min.js?ver=8.2.0"
-      id="wc-add-to-cart-js"
-    ></script>
     <script
       type="text/javascript"
       src="./js/js.cookie.min.js?ver=2.1.4-wc.8.2.0"
       id="js-cookie-js"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="./js/woocommerce.min.js?ver=8.2.0"
-      id="woocommerce-js"
     ></script>
     <script
       type="text/javascript"
       src="./js/core.min.js?ver=1.13.3"
       id="jquery-ui-core-js"
     ></script>
-    <script type="text/javascript" id="qi-addons-for-elementor-script-js-extra">
-      /* <![CDATA[ */
-      var qodefQiAddonsGlobal = {
-        vars: {
-          adminBarHeight: 0,
-          iconArrowLeft:
-            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0.5" y1="16" x2="33.5" y2="16"\/><line x1="0.3" y1="16.5" x2="16.2" y2="0.7"\/><line x1="0" y1="15.4" x2="16.2" y2="31.6"\/><\/svg>',
-          iconArrowRight:
-            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width: 2;"><line x1="0" y1="16" x2="33" y2="16"\/><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"\/><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"\/><\/svg>',
-          iconClose:
-            '<svg  xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 9.1 9.1" xml:space="preserve"><g><path d="M8.5,0L9,0.6L5.1,4.5L9,8.5L8.5,9L4.5,5.1L0.6,9L0,8.5L4,4.5L0,0.6L0.6,0L4.5,4L8.5,0z"\/><\/g><\/svg>',
-        },
-      };
-      /* ]]> */
-    </script>
     <script
       type="text/javascript"
       src="./js/main.min.js?ver=6.7.1"
@@ -4830,33 +4721,9 @@
     ></script>
     <script
       type="text/javascript"
-      src="./js/jquery.parallax-scroll.js?ver=1"
+      src="./js/jquery.parallax-scroll.js?ver=2"
       id="parallax-scroll-js"
     ></script>
-    <script type="text/javascript" id="courtroom-main-js-js-extra">
-      /* <![CDATA[ */
-      var qodefGlobal = {
-        vars: {
-          adminBarHeight: 0,
-          iconArrowLeft:
-            '<svg class="qodef-svg--slider-arrow-left" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 26 50.9" xml:space="preserve"><polyline points="25.6,0.4 0.7,25.5 25.6,50.6 " \/><\/svg>',
-          iconArrowRight:
-            '<svg class="qodef-svg--slider-arrow-right" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" viewBox="0 0 26 50.9" xml:space="preserve"><polyline points="0.4,50.6 25.3,25.5 0.4,0.4 " \/><\/svg>',
-          iconClose:
-            '<svg class="qodef-svg--close" xmlns="http:\/\/www.w3.org\/2000\/svg" width="26px" height="26px"\n     viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve"><line x1="25" y1="1" x2="1" y2="25"\/><line x1="1" y1="1" x2="25" y2="25"\/><\/svg>',
-          qodefStickyHeaderScrollAmount: 1100,
-          topAreaHeight: 40,
-          restUrl: ".\/wp-json\/",
-          restNonce: "1e35ba01ce",
-          paginationRestRoute: "courtroom\/v1\/get-posts",
-          iconSearch:
-            '<svg class="qodef-svg--search" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px" width="17.33" height="17.33" viewBox="3.32 3.27 17.33 17.33" xml:space="preserve"><g><path d="M11.11,4c3.93,0,7.11,3.18,7.11,7.11c0,3.93-3.19,7.11-7.11,7.11C7.18,18.22,4,15.04,4,11.11 C4,7.18,7.18,4,11.11,4z"\/><line x1="20" y1="20" x2="16.13" y2="16.13"\/><\/g><\/svg>',
-          headerHeight: 92,
-          mobileHeaderHeight: 70,
-        },
-      };
-      /* ]]> */
-    </script>
     <script
       type="text/javascript"
       src="./js/main2.min.js?ver=6.7.1"
@@ -4882,89 +4749,6 @@
       src="./js/markerclusterer.js?ver=6.7.1"
       id="markerclusterer-js"
     ></script>
-    <script type="text/javascript" id="courtroom-core-google-map-js-extra">
-      /* <![CDATA[ */
-      var qodefMapsVariables = {
-        global: {
-          mapStyle: [
-            {
-              featureType: "administrative.land_parcel",
-              elementType: "all",
-              stylers: [{ visibility: "off" }],
-            },
-            {
-              featureType: "landscape.man_made",
-              elementType: "all",
-              stylers: [{ visibility: "off" }],
-            },
-            {
-              featureType: "poi",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }],
-            },
-            {
-              featureType: "road",
-              elementType: "labels",
-              stylers: [{ visibility: "simplified" }, { lightness: 20 }],
-            },
-            {
-              featureType: "road.highway",
-              elementType: "geometry",
-              stylers: [{ hue: "#f49935" }],
-            },
-            {
-              featureType: "road.highway",
-              elementType: "labels",
-              stylers: [{ visibility: "simplified" }],
-            },
-            {
-              featureType: "road.arterial",
-              elementType: "geometry",
-              stylers: [{ hue: "#fad959" }],
-            },
-            {
-              featureType: "road.arterial",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }],
-            },
-            {
-              featureType: "road.local",
-              elementType: "geometry",
-              stylers: [{ visibility: "simplified" }],
-            },
-            {
-              featureType: "road.local",
-              elementType: "labels",
-              stylers: [{ visibility: "simplified" }],
-            },
-            {
-              featureType: "transit",
-              elementType: "all",
-              stylers: [{ visibility: "off" }],
-            },
-            {
-              featureType: "water",
-              elementType: "all",
-              stylers: [
-                { hue: "#a1cdfc" },
-                { saturation: 30 },
-                { lightness: 49 },
-              ],
-            },
-          ],
-          mapZoom: "12%",
-          mapScrollable: false,
-          mapDraggable: true,
-          streetViewControl: true,
-          zoomControl: true,
-          mapTypeControl: true,
-          fullscreenControl: true,
-          geolocationTitle: "Your location is here",
-        },
-        multiple: [],
-      };
-      /* ]]> */
-    </script>
     <script
       type="text/javascript"
       src="./js/google-map.js?ver=6.7.1"
@@ -4990,7 +4774,6 @@
       src="./js/snippet.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&ver=6.7.1"
       id="ze-snippet"
     ></script>
-
     <script
       type="text/javascript"
       src="./js/jquery.magnific-popup.min.js?ver=6.7.1"
@@ -5011,90 +4794,6 @@
       src="./js/packery-mode.pkgd.min.js?ver=6.7.1"
       id="packery-js"
     ></script>
-    <script type="text/javascript" id="mediaelement-core-js-before">
-      /* <![CDATA[ */
-      var mejsL10n = {
-        language: "en",
-        strings: {
-          "mejs.download-file": "Download File",
-          "mejs.install-flash":
-            "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/",
-          "mejs.fullscreen": "Fullscreen",
-          "mejs.play": "Play",
-          "mejs.pause": "Pause",
-          "mejs.time-slider": "Time Slider",
-          "mejs.time-help-text":
-            "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.",
-          "mejs.live-broadcast": "Live Broadcast",
-          "mejs.volume-help-text":
-            "Use Up\/Down Arrow keys to increase or decrease volume.",
-          "mejs.unmute": "Unmute",
-          "mejs.mute": "Mute",
-          "mejs.volume-slider": "Volume Slider",
-          "mejs.video-player": "Video Player",
-          "mejs.audio-player": "Audio Player",
-          "mejs.captions-subtitles": "Captions\/Subtitles",
-          "mejs.captions-chapters": "Chapters",
-          "mejs.none": "None",
-          "mejs.afrikaans": "Afrikaans",
-          "mejs.albanian": "Albanian",
-          "mejs.arabic": "Arabic",
-          "mejs.belarusian": "Belarusian",
-          "mejs.bulgarian": "Bulgarian",
-          "mejs.catalan": "Catalan",
-          "mejs.chinese": "Chinese",
-          "mejs.chinese-simplified": "Chinese (Simplified)",
-          "mejs.chinese-traditional": "Chinese (Traditional)",
-          "mejs.croatian": "Croatian",
-          "mejs.czech": "Czech",
-          "mejs.danish": "Danish",
-          "mejs.dutch": "Dutch",
-          "mejs.english": "English",
-          "mejs.estonian": "Estonian",
-          "mejs.filipino": "Filipino",
-          "mejs.finnish": "Finnish",
-          "mejs.french": "French",
-          "mejs.galician": "Galician",
-          "mejs.german": "German",
-          "mejs.greek": "Greek",
-          "mejs.haitian-creole": "Haitian Creole",
-          "mejs.hebrew": "Hebrew",
-          "mejs.hindi": "Hindi",
-          "mejs.hungarian": "Hungarian",
-          "mejs.icelandic": "Icelandic",
-          "mejs.indonesian": "Indonesian",
-          "mejs.irish": "Irish",
-          "mejs.italian": "Italian",
-          "mejs.japanese": "Japanese",
-          "mejs.korean": "Korean",
-          "mejs.latvian": "Latvian",
-          "mejs.lithuanian": "Lithuanian",
-          "mejs.macedonian": "Macedonian",
-          "mejs.malay": "Malay",
-          "mejs.maltese": "Maltese",
-          "mejs.norwegian": "Norwegian",
-          "mejs.persian": "Persian",
-          "mejs.polish": "Polish",
-          "mejs.portuguese": "Portuguese",
-          "mejs.romanian": "Romanian",
-          "mejs.russian": "Russian",
-          "mejs.serbian": "Serbian",
-          "mejs.slovak": "Slovak",
-          "mejs.slovenian": "Slovenian",
-          "mejs.spanish": "Spanish",
-          "mejs.swahili": "Swahili",
-          "mejs.swedish": "Swedish",
-          "mejs.tagalog": "Tagalog",
-          "mejs.thai": "Thai",
-          "mejs.turkish": "Turkish",
-          "mejs.ukrainian": "Ukrainian",
-          "mejs.vietnamese": "Vietnamese",
-          "mejs.welsh": "Welsh",
-          "mejs.yiddish": "Yiddish",
-        },
-      };
-      /* ]]> */
-    </script>
     <script
       type="text/javascript"
       src="./js/mediaelement-and-player.min.js?ver=4.2.17"
@@ -5130,133 +4829,11 @@
       src="./js/waypoints.min.js?ver=4.0.2"
       id="elementor-waypoints-js"
     ></script>
-    <script type="text/javascript" id="elementor-frontend-js-before">
-      /* <![CDATA[ */
-      var elementorFrontendConfig = {
-        environmentMode: {
-          edit: false,
-          wpPreview: false,
-          isScriptDebug: false,
-        },
-        i18n: {
-          shareOnFacebook: "Share on Facebook",
-          shareOnTwitter: "Share on Twitter",
-          pinIt: "Pin it",
-          download: "Download",
-          downloadImage: "Download image",
-          fullscreen: "Fullscreen",
-          zoom: "Zoom",
-          share: "Share",
-          playVideo: "Play Video",
-          previous: "Previous",
-          next: "Next",
-          close: "Close",
-          a11yCarouselWrapperAriaLabel:
-            "Carousel | Horizontal scrolling: Arrow Left & Right",
-          a11yCarouselPrevSlideMessage: "Previous slide",
-          a11yCarouselNextSlideMessage: "Next slide",
-          a11yCarouselFirstSlideMessage: "This is the first slide",
-          a11yCarouselLastSlideMessage: "This is the last slide",
-          a11yCarouselPaginationBulletMessage: "Go to slide",
-        },
-        is_rtl: false,
-        breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
-        responsive: {
-          breakpoints: {
-            mobile: {
-              label: "Mobile Portrait",
-              value: 767,
-              default_value: 767,
-              direction: "max",
-              is_enabled: true,
-            },
-            mobile_extra: {
-              label: "Mobile Landscape",
-              value: 880,
-              default_value: 880,
-              direction: "max",
-              is_enabled: true,
-            },
-            tablet: {
-              label: "Tablet Portrait",
-              value: 1024,
-              default_value: 1024,
-              direction: "max",
-              is_enabled: true,
-            },
-            tablet_extra: {
-              label: "Tablet Landscape",
-              value: 1200,
-              default_value: 1200,
-              direction: "max",
-              is_enabled: true,
-            },
-            laptop: {
-              label: "Laptop",
-              value: 1512,
-              default_value: 1366,
-              direction: "max",
-              is_enabled: true,
-            },
-            widescreen: {
-              label: "Widescreen",
-              value: 1950,
-              default_value: 2400,
-              direction: "min",
-              is_enabled: true,
-            },
-          },
-        },
-        version: "3.16.5",
-        is_static: false,
-        experimentalFeatures: {
-          e_dom_optimization: true,
-          e_optimized_assets_loading: true,
-          e_optimized_css_loading: true,
-          additional_custom_breakpoints: true,
-          container: true,
-          e_swiper_latest: true,
-          "landing-pages": true,
-          e_global_styleguide: true,
-        },
-        urls: {
-          assets:
-            "https:\/\/courtroom.qodeinteractive.com\/wp-content\/plugins\/elementor\/assets\/",
-        },
-        swiperClass: "swiper",
-        settings: { page: [], editorPreferences: [] },
-        kit: {
-          active_breakpoints: [
-            "viewport_mobile",
-            "viewport_mobile_extra",
-            "viewport_tablet",
-            "viewport_tablet_extra",
-            "viewport_laptop",
-            "viewport_widescreen",
-          ],
-          viewport_mobile: 767,
-          viewport_mobile_extra: 880,
-          viewport_tablet: 1024,
-          viewport_tablet_extra: 1200,
-          viewport_laptop: 1512,
-          viewport_widescreen: 1950,
-          lightbox_enable_counter: "yes",
-          lightbox_enable_fullscreen: "yes",
-          lightbox_enable_zoom: "yes",
-          lightbox_enable_share: "yes",
-          lightbox_title_src: "title",
-          lightbox_description_src: "description",
-        },
-        post: {
-          id: 113,
-          title: "Courtroom%20%E2%80%93%20Lawyer%20and%20Law%20Firm%20Theme",
-          excerpt: "",
-          featuredImage:
-            "https:\/\/courtroom.qodeinteractive.com\/wp-content\/uploads\/2023\/10\/opengraph-1024x538.png",
-        },
-      };
-      /* ]]> */
-    </script>
+    <script
+      type="text/javascript"
+      src="./js/wiesse.js?ver=1.3"
+      id="wiesse-elementos-js"
+    ></script>
     <script
       type="text/javascript"
       src="./js/frontend.min.js?ver=3.16.5"
@@ -5281,11 +4858,6 @@
       type="text/javascript"
       src="./js/elementor.min.js?ver=6.7.1"
       id="courtroom-core-elementor-js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./js/wiesse.js?ver=1.2"
-      id="wiesse-elementos-js"
     ></script>
   </body>
 </html>
