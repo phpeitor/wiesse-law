@@ -188,3 +188,29 @@ font-size: 50px;
 .elementor-drop-cap-letter {
 display: inline-block;
 }
+
+#team .qodef-e-image {
+    position: relative;
+    overflow: hidden;
+}
+
+#team .qodef-e-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 25, 61, 0.5);
+    z-index: 1;
+}
+
+#team .qodef-e-media-image img {
+    display: block;
+    width: 100%;
+}
+
+#team .qodef-e-content {
+    z-index: 2;
+    color: white;
+}
