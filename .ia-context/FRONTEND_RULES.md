@@ -11,29 +11,25 @@
 ## Estructura real
 
 - `index.html`: markup, contenido, navegación y referencias a todos los recursos.
-- `wp-includes/css/custom.css`: estilos propios del proyecto y overrides mantenibles.
-- `wp-includes/js/custom.js`: configuración y comportamiento propio de la landing.
-- `wp-content/cache/autoptimize/css/`: CSS exportado y minificado del tema/Elementor.
-- `wp-content/cache/autoptimize/js/`: JavaScript exportado/minificado de la plantilla.
-- `wp-content/uploads/`: video, perfil, firma, logos, portafolio, autores y publicaciones.
-- `wp-content/themes/watson/` y `wp-content/themes/watson-child/`: estructura del tema original; no asumir que contienen fuentes editables.
-- `wp-includes/js/`: dependencias de WordPress exportadas.
+- `css/`: estilos de la plantilla, dependencias y hojas de estilo del proyecto.
+- `js/`: scripts de la plantilla, dependencias y comportamiento del sitio.
+- `img/`: recursos visuales y assets del sitio.
+- `fonts/` y `webfonts/`: tipografías y fuentes locales.
+- `README.md`: documentación de uso del proyecto.
 - `.ia-context/`: convenciones para agentes; no forma parte del runtime de la página.
 
-No crear `css/`, `php/`, `images/`, `fonts/`, `.env`, `programacion.json` o `citas.json` como si fueran parte del proyecto actual. Los estilos y scripts propios deben vivir en `wp-includes/css/` y `wp-includes/js/`, separados del HTML.
+No crear nuevas carpetas tipo `wp-content`, `wp-includes`, `php`, `uploads`, `.env`, `programacion.json` o `citas.json` como si fueran parte del proyecto actual. El sitio se organiza con rutas relativas desde la raíz del proyecto y no requiere un CMS ni build system.
 
 ## HTML y contenido
 
 - `index.html` debe contener markup, contenido y referencias a recursos; no debe contener bloques `<style>`, JavaScript inline ni atributos `style` para comportamiento o estilos propios.
-- Todo CSS nuevo debe vivir en `wp-includes/css/custom.css` y todo JavaScript nuevo debe vivir en `wp-includes/js/custom.js`. No mezclar responsabilidades en `index.html`.
-- Los estilos inline heredados del exportador deben migrarse a clases en `wp-includes/css/custom.css` cuando se modifique esa zona; no añadir nuevos estilos inline.
-- La configuración global requerida por dependencias exportadas debe definirse en `wp-includes/js/custom.js`, antes de cargar el bundle que la consume.
+- Los cambios de estilo deben mantenerse dentro de `css/` y los cambios de comportamiento dentro de `js/`, respetando la estructura actual del proyecto.
 - Mantener `lang="es"`, `meta charset`, viewport y un único `h1` principal.
-- Conservar las anclas existentes: `#home`, `#about`, `#resume`, `#portfolio`, `#blog` y `#contact`.
-- Usar secciones y headings en una jerarquía comprensible; evitar texto de plantilla como “Ipsum”, “My Resume” o etiquetas en inglés si el contenido se está corrigiendo.
+- Conservar las secciones y anclas relevantes que ya existan en la landing y mantener navegación coherente.
+- Usar secciones y headings en una jerarquía comprensible; evitar texto de plantilla, lorem ipsum o etiquetas en inglés si el contenido se está corrigiendo.
 - Los datos de la firma deben ser verificables. No inventar áreas de práctica, clientes, reconocimientos, testimonios o casos.
 - Los enlaces telefónicos y de correo deben ser accionables (`tel:` y `mailto:`) cuando se modifique el bloque de contacto.
-- Los formularios requieren `label` asociado, tipo de campo correcto, `required` cuando aplique, mensajes de estado y un endpoint real. No presentar un formulario con `action="#"` como funcional.
+- Los formularios requieren `label` asociado, tipo de campo correcto, `required` cuando aplique, mensajes de estado y un destino real. No presentar un formulario con `action="#"` como funcional.
 - Cada imagen debe tener un `alt` descriptivo; usar `alt=""` solo para imágenes puramente decorativas.
 
 ## Dirección visual
@@ -46,19 +42,18 @@ No crear `css/`, `php/`, `images/`, `fonts/`, `.env`, `programacion.json` o `cit
 
 ## CSS
 
-- Mantener todos los estilos editables en `wp-includes/css/custom.css`; `index.html` solo debe enlazar hojas de estilo.
-- Antes de editar un CSS minificado, comprobar que no exista una fuente editable en el tema hijo; si no existe, hacer el cambio mínimo y dejar constancia en el diff.
-- Evitar `!important`, selectores globales frágiles y cambios que alteren accidentalmente el layout exportado de Elementor.
+- Mantener los estilos editables dentro de `css/`; `index.html` solo debe enlazar hojas de estilo.
+- Antes de editar un archivo CSS minificado o heredado, confirmar que no exista una alternativa más clara dentro del proyecto y hacer el cambio mínimo necesario.
+- Evitar `!important`, selectores globales frágiles y cambios que alteren accidentalmente el layout del sitio.
 - Definir dimensiones estables para imágenes, video y controles para evitar saltos de layout.
-- Probar como mínimo escritorio y móvil; ningún texto, botón, navegación o mapa debe desbordarse horizontalmente.
+- Probar como mínimo escritorio y móvil; ningún texto, botón ni navegación debe desbordarse horizontalmente.
 
 ## JavaScript y recursos
 
-- Mantener toda la lógica y configuración propia en `wp-includes/js/custom.js`; `index.html` solo debe cargar scripts mediante `src`.
-- No añadir lógica de negocio de citas ni endpoints inexistentes.
-- Si se modifica el bundle cacheado, comprobar primero qué comportamiento controla y evitar reescribirlo sin fuente legible.
-- Mantener el hero de video silencioso, en bucle y compatible con `playsinline`; respetar `prefers-reduced-motion` cuando se agreguen animaciones nuevas.
-- Preferir assets locales en `wp-content/uploads/`; no enlazar recursos externos innecesarios.
+- Mantener la lógica y configuración del sitio dentro de `js/`; `index.html` solo debe cargar scripts mediante `src`.
+- No añadir lógica de negocio inexistente ni endpoints que no existan.
+- Mantener el comportamiento del sitio consistente con la estructura actual; si se modifica un script exportado, revisarlo con cuidado y evitar reescribir funciones sin necesidad.
+- Preferir assets locales en `img/`, `fonts/` o `webfonts/`; no enlazar recursos externos innecesarios.
 - Verificar que cada `src`, `href`, `srcset` y URL de CSS apunta a un archivo existente o a un destino externo intencional.
 
 ## Accesibilidad, seguridad y privacidad
@@ -76,11 +71,11 @@ No crear `css/`, `php/`, `images/`, `fonts/`, `.env`, `programacion.json` o `cit
 
 ## Despliegue y QA
 
-- Servir desde la raíz del proyecto para que las rutas `./wp-content/...` y `./wp-includes/...` funcionen.
+- Servir desde la raíz del proyecto para que rutas como `./css/...`, `./js/...`, `./img/...` funcionen correctamente.
 - Abrir `index.html` mediante Apache y revisar consola y red del navegador.
-- Validar manualmente navegación, menú móvil, hero, imágenes, video, portafolio, blog, formulario y mapa.
+- Validar manualmente navegación, menú móvil, hero, imágenes, formularios y contenido principal.
 - Comprobar ausencia de placeholders, enlaces `#` no intencionales, recursos 404 y errores JavaScript.
-- Revisar el diff final y no incluir cambios no relacionados en cachés o assets.
+- Revisar el diff final y no incluir cambios no relacionados en assets o estructura del frontend.
 
 ## Regla de evolución
 
