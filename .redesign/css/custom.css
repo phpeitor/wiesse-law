@@ -2649,6 +2649,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	text-align: center;
 	padding: 19px 0;
 }
+.h3-logo-row .h3-logo a {
+	display: inline-block;
+	max-width: 100%;
+}
+.h3-logo-row .h3-logo img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	width: min(820px, 50%);
+	margin: 0 auto;
+}
 .h3-logo-row ul.quick-links {
 	margin: 20px 0 14px;
 	padding: 0;
@@ -7058,4 +7069,3 @@ a[data-toggle="collapse"] {
 	-webkit-transition: all ease-in-out 0.3s;
 }
 /******** + ========== + Transition End + ========== + ********/
-9
