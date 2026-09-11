@@ -395,7 +395,9 @@ jQuery(document).ready(function($) {
                 }
 
                 if (typeof temperatures[index] === 'number') {
-                    label.textContent = temperatures[index].toFixed(1) + '°C';
+                    var celsius = temperatures[index];
+                    var fahrenheit = (celsius * 9 / 5) + 32;
+                    label.textContent = celsius.toFixed(0) + '°C / ' + fahrenheit.toFixed(0) + '°F';
                 } else {
                     label.textContent = 'Sin datos';
                 }
