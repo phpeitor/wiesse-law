@@ -344,6 +344,72 @@ jQuery(document).ready(function($) {
        });
 	 }
 
+    // ------- Dynamic Weather Start ------- //
+    function buildWeatherApiUrl() {
+        var baseUrl = window.WEATHER_API || 'https://archive-api.open-meteo.com/v1/archive?latitude=-6.7701&longitude=-79.855';
+        var now = new Date();
+        var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+        var url = new URL(baseUrl);
+        url.searchParams.set('start_date', today);
+        url.searchParams.set('end_date', today);
+        url.searchParams.set('hourly', 'temperature_2m');
+        url.searchParams.set('timezone', 'auto');
+        return url.toString();
+    }
+
+    function updateWeatherLabel() {
+        var label = document.getElementById('weather');
+        if (!label) return;
+
+        var now = new Date();
+        var currentDate = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+        var currentHour = String(now.getHours()).padStart(2, '0');
+        var currentTimeKey = currentDate + 'T' + currentHour + ':00';
+
+        fetch(buildWeatherApiUrl())
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Weather request failed');
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                var times = data && data.hourly && data.hourly.time ? data.hourly.time : [];
+                var temperatures = data && data.hourly && data.hourly.temperature_2m ? data.hourly.temperature_2m : [];
+
+                var index = times.indexOf(currentTimeKey);
+
+                if (index === -1) {
+                    var closestIndex = 0;
+                    var closestDiff = Number.MAX_SAFE_INTEGER;
+
+                    for (var i = 0; i < times.length; i++) {
+                        var timeDiff = Math.abs(new Date(times[i]).getTime() - now.getTime());
+                        if (timeDiff < closestDiff) {
+                            closestDiff = timeDiff;
+                            closestIndex = i;
+                        }
+                    }
+
+                    index = closestIndex;
+                }
+
+                if (typeof temperatures[index] === 'number') {
+                    label.textContent = temperatures[index].toFixed(1) + '°C';
+                } else {
+                    label.textContent = 'Sin datos';
+                }
+            })
+            .catch(function () {
+                label.textContent = 'Sin datos';
+            });
+    }
+
+    if ($('#weather').length) {
+        updateWeatherLabel();
+    }
+    // ------- Dynamic Weather End ------- //
+
 
 }); //End
 
