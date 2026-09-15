@@ -1073,10 +1073,10 @@ rs-module h6.rs-layer:before { content: none; }
 *********************************/
 rs-dotted						{	background-repeat:repeat;width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:3;display:block;pointer-events: none}
 rs-sbg-wrap rs-dotted 			{ z-index: 31 }
-rs-dotted.twoxtwo				{	background:url(../assets/gridtile.png)}
-rs-dotted.twoxtwowhite			{	background:url(../assets/gridtile_white.png)}
-rs-dotted.threexthree			{	background:url(../assets/gridtile_3x3.png)}
-rs-dotted.threexthreewhite		{	background:url(../assets/gridtile_3x3_white.png)}
+rs-dotted.twoxtwo				{	background:url(../images/gridtile.png)}
+rs-dotted.twoxtwowhite			{	background:url(../images/gridtile_white.png)}
+rs-dotted.threexthree			{	background:url(../images/gridtile_3x3.png)}
+rs-dotted.threexthreewhite		{	background:url(../images/gridtile_3x3_white.png)}
 
 
 /******************************
@@ -1399,8 +1399,8 @@ rs-progress-vis 				{ 	display:block;width: 100%;height: 100%; position: absolut
 
 .rs-layer.slidelink { cursor:pointer;width:100%;height:100%; }
 .rs-layer.slidelink a {	width:100%;height:100%;display:block}
-.rs-layer.slidelink a div {	width:3000px; height:1500px;  background:url(../assets/coloredbg.png) repeat}
-.rs-layer.slidelink a span{	background:url(../assets/coloredbg.png) repeat; width:100%;height:100%;display:block}
+.rs-layer.slidelink a div {	width:3000px; height:1500px;  background:url(../images/coloredbg.png) repeat}
+.rs-layer.slidelink a span{	background:url(../images/coloredbg.png) repeat; width:100%;height:100%;display:block}
 /*.tp-shape {	width:100%;height:100%;}*/
 
 
@@ -1478,7 +1478,7 @@ rs-loader.spinner0 {
 	width: 40px;
 	height: 40px;
 	background-color: #fff;
-	background-image:url(../assets/loader.gif);
+	background-image:url(../images/loader.gif);
 	background-repeat:no-repeat;
 	background-position: center center;
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
@@ -1503,7 +1503,7 @@ rs-loader.spinner1 {
 
 
 rs-loader.spinner5 	{
-	background-image:url(../assets/loader.gif);
+	background-image:url(../images/loader.gif);
 	background-repeat:no-repeat;
 	background-position:10px 10px;
 	background-color:#fff;

@@ -2851,34 +2851,92 @@ li.header-weather {
 	padding: 0 12px;
 	border-left: 1px solid #e1e1e1;
 }
+.volunteer-modal .modal-dialog {
+	width: 700px;
+	max-width: calc(100% - 30px);
+	margin: 80px auto 30px;
+}
 .volunteer-modal .modal-content {
+	position: relative;
+	background: #40407e;
+	border: 0;
 	border-radius: 3px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+	padding: 42px 30px 40px;
 }
-.volunteer-modal .modal-header {
-	background: #12498a;
+.volunteer-modal .volunteer-close {
+	position: absolute;
+	right: 18px;
+	top: 14px;
+	background: none;
+	border: 0;
 	color: #fff;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 28px;
+	opacity: .75;
 }
-.volunteer-modal .modal-title {
+.volunteer-modal .volunteer-close:hover {
+	color: #d94148;
+	opacity: 1;
+}
+.volunteer-modal .volunteer-form-heading {
+	margin-bottom: 22px;
+}
+.volunteer-modal .volunteer-form-heading p {
+	margin: 0 0 8px;
+	color: #fff;
+	font-size: 14px;
+}
+.volunteer-modal .volunteer-form-heading h4 {
+	margin: 0;
+	color: #fff;
+	font-size: 30px;
 	font-weight: 700;
 }
-.volunteer-modal .modal-header .close {
-	color: #fff;
-	opacity: .9;
+.volunteer-modal .volunteer-field {
+	margin-bottom: 18px;
 }
-.volunteer-modal .modal-body {
-	padding: 25px 30px 10px;
+.volunteer-modal .linput {
+	display: block;
+	min-height: 53px;
+	line-height: 25px;
+	font-size: 14px;
+	box-sizing: border-box;
 }
-.volunteer-modal .form-group {
-	margin-bottom: 15px;
-}
-.volunteer-modal label {
-	color: #333;
-	font-weight: 600;
-}
-.volunteer-modal .volunteer-submit {
-	background: #d94148;
+.volunteer-modal .linput:focus {
 	border-color: #d94148;
+}
+.volunteer-modal textarea.linput {
+	min-height: 112px;
+	padding-top: 14px;
+	resize: vertical;
+}
+.volunteer-modal input[type="date"].linput {
+	color: #777;
+}
+.volunteer-modal input[type="date"].linput:invalid {
+	color: #777;
+}
+.volunteer-modal form > button[type="submit"] {
+	width: 100%;
+	background: #d94148;
 	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 53px;
+	border: 0;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: 2px;
+}
+.volunteer-modal form > button[type="submit"]:hover {
+	background: #fff;
+	color: #d94148;
+}
+.pp_pic_holder .ppt {
+	display: none !important;
 }
 .h3-slider-caption {
 	position: absolute;
