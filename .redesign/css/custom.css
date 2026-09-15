@@ -2851,6 +2851,35 @@ li.header-weather {
 	padding: 0 12px;
 	border-left: 1px solid #e1e1e1;
 }
+.volunteer-modal .modal-content {
+	border-radius: 3px;
+}
+.volunteer-modal .modal-header {
+	background: #12498a;
+	color: #fff;
+}
+.volunteer-modal .modal-title {
+	font-weight: 700;
+}
+.volunteer-modal .modal-header .close {
+	color: #fff;
+	opacity: .9;
+}
+.volunteer-modal .modal-body {
+	padding: 25px 30px 10px;
+}
+.volunteer-modal .form-group {
+	margin-bottom: 15px;
+}
+.volunteer-modal label {
+	color: #333;
+	font-weight: 600;
+}
+.volunteer-modal .volunteer-submit {
+	background: #d94148;
+	border-color: #d94148;
+	color: #fff;
+}
 .h3-slider-caption {
 	position: absolute;
 	left: 0;

@@ -39,7 +39,8 @@
                             <p>Únete al Programa de Voluntariado. <a href="#">Registrar</a></p>
                         </div>
                         <div class="col-md-6 col-sm-5"> <a id="closebtn" href="#" class="cross-btn"><i
-                                    class="fas fa-times"></i></a> <a href="#" class="become-vol">Quiero ser Voluntario</a>
+                                    class="fas fa-times"></i></a> <a href="#volunteer-modal" class="become-vol"
+                                data-toggle="modal" data-target="#volunteer-modal">Quiero ser Voluntario</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +142,8 @@
                                         <button type="submit"><i class="fas fa-search"></i></button>
                                     </form>
                                 </li>
-                                <li class="donate-btn"><a href="#">Donar</a></li>
+                                <li class="donate-btn"><a href="./images/qr.png" class="donate-lightbox"
+                                    data-rel="prettyPhoto[donation]" title="Código QR para donar">Donar</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -1031,6 +1033,53 @@
         </ul>
     </nav>
     <div class="overlay"></div>
+
+    <div class="modal fade volunteer-modal" id="volunteer-modal" tabindex="-1" role="dialog"
+        aria-labelledby="volunteer-modal-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="volunteer-modal-title">Quiero ser voluntario</h4>
+                </div>
+                <form id="volunteer-form">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label for="volunteer-dni">DNI</label>
+                                <input type="text" class="form-control" id="volunteer-dni" name="dni" maxlength="8"
+                                    pattern="[0-9]{8}" inputmode="numeric" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="volunteer-birth-date">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="volunteer-birth-date" name="fecha_nacimiento"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label for="volunteer-first-name">Nombres</label>
+                                <input type="text" class="form-control" id="volunteer-first-name" name="nombres" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="volunteer-last-name">Apellidos</label>
+                                <input type="text" class="form-control" id="volunteer-last-name" name="apellidos" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="volunteer-comment">¿Por qué quieres ser voluntario?</label>
+                            <textarea class="form-control" id="volunteer-comment" name="comentario" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn volunteer-submit">Enviar solicitud</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- JS -->
     <script src="./js/jquery.min.js"></script>
