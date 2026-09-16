@@ -161,7 +161,52 @@ jQuery(document).ready(function($) {
     }
     // ------- Close Btn ------- //
 
+    // Ensure Bootstrap modal cleanup is complete so the page is restored immediately
+    var $volunteerModal = $('#volunteer-modal');
+    var $volunteerTrigger = null;
 
+    if ($volunteerModal.length) {
+        $volunteerModal.on('show.bs.modal', function(event) {
+            $volunteerTrigger = $(event.relatedTarget || document.activeElement);
+            $volunteerModal.attr('aria-hidden', 'false');
+            setTimeout(function() {
+                $volunteerModal.find('input, textarea, button').first().focus();
+            }, 0);
+        });
+
+        $volunteerModal.on('hidden.bs.modal', function() {
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            $('html, body').css('overflow', '');
+            $volunteerModal.attr('aria-hidden', 'true');
+            if ($volunteerTrigger && $volunteerTrigger.length) {
+                $volunteerTrigger.blur();
+            }
+            if (document.activeElement && document.activeElement.blur) {
+                document.activeElement.blur();
+            }
+        });
+
+        $volunteerModal.on('click', function(event) {
+            if (event.target === this) {
+                $volunteerModal.modal('hide');
+            }
+        });
+
+        $(document).on('keydown', function(event) {
+            if (event.key === 'Escape' && $volunteerModal.hasClass('in')) {
+                $volunteerModal.modal('hide');
+            }
+        });
+    }
+
+    $(document).on('hidden.bs.modal', '.modal', function() {
+        if (!$('#volunteer-modal').hasClass('in')) {
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            $('html, body').css('overflow', '');
+        }
+    });
 
     // ------- Events Counter ------- //
     if ($('#defaultCountdown').length) {
