@@ -9,6 +9,7 @@ Guía de trabajo para la landing estática del estudio jurídico. El objetivo es
 - La carpeta `css/` concentra los estilos de la plantilla exportada y los recursos visuales del frontend.
 - La carpeta `js/` concentra scripts de la plantilla, dependencias y comportamiento del sitio.
 - La carpeta `img/` contiene recursos gráficos y assets del sitio; `fonts/` y `webfonts/` contienen tipografías y fuentes.
+- Existe además una versión activa en `.redesign/`, con su propio `index.html`, `css/` y `js/`. Si el trabajo está enfocado en `.redesign`, se debe priorizar ese contexto y no tocar la raíz `js/` ni `css/` salvo instrucción explícita.
 - El repositorio es una landing estática compatible con Apache; no contiene `wp-content`, `wp-includes`, backend, `php`, `.env`, base de datos ni flujo de build.
 - Este archivo y sus reglas viven en `.ia-context/` y sirven como guía para agentes; no forman parte del runtime del sitio.
 
@@ -30,6 +31,15 @@ Trabaja principalmente en:
 - `css/`
 - `js/`
 - `img/` y fuentes relacionadas
+
+Si la tarea se ejecuta dentro de `.redesign`, entonces el contexto activo pasa a ser:
+
+- `.redesign/index.html`
+- `.redesign/css/`
+- `.redesign/js/`
+- `.redesign/img/`
+
+En ese caso, no se deben modificar archivos de la raíz del proyecto (`css/`, `js/`) por accidente.
 
 Debe:
 

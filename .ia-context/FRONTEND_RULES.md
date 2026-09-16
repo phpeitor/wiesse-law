@@ -15,8 +15,11 @@
 - `js/`: scripts de la plantilla, dependencias y comportamiento del sitio.
 - `img/`: recursos visuales y assets del sitio.
 - `fonts/` y `webfonts/`: tipografías y fuentes locales.
+- `.redesign/`: versión de trabajo activa para la landing institucional del estudio; contiene su propio `css/`, `js/`, `img/` y `index.html`.
 - `README.md`: documentación de uso del proyecto.
 - `.ia-context/`: convenciones para agentes; no forma parte del runtime de la página.
+
+Cuando el trabajo se realice dentro de `.redesign`, priorizar los archivos de esa carpeta (`.redesign/css`, `.redesign/js`, `.redesign/index.html`) y no tocar los scripts o estilos de la raíz del proyecto salvo que exista una razón explícita y documentada. La raíz y `.redesign` son contextos distintos y deben tratarse por separado.
 
 No crear nuevas carpetas tipo `wp-content`, `wp-includes`, `php`, `uploads`, `.env`, `programacion.json` o `citas.json` como si fueran parte del proyecto actual. El sitio se organiza con rutas relativas desde la raíz del proyecto y no requiere un CMS ni build system.
 
