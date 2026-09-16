@@ -387,18 +387,6 @@ jQuery(document).ready(function($) {
 	 }
 
     // ------- Dynamic Weather Start ------- //
-    function buildWeatherApiUrl() {
-        var baseUrl = window.WEATHER_API || 'https://archive-api.open-meteo.com/v1/archive?latitude=-6.7701&longitude=-79.855';
-        var now = new Date();
-        var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-        var url = new URL(baseUrl);
-        url.searchParams.set('start_date', today);
-        url.searchParams.set('end_date', today);
-        url.searchParams.set('hourly', 'temperature_2m');
-        url.searchParams.set('timezone', 'auto');
-        return url.toString();
-    }
-
     function updateWeatherLabel() {
         var label = document.getElementById('weather');
         if (!label) return;
@@ -408,7 +396,7 @@ jQuery(document).ready(function($) {
         var currentHour = String(now.getHours()).padStart(2, '0');
         var currentTimeKey = currentDate + 'T' + currentHour + ':00';
 
-        fetch(buildWeatherApiUrl())
+        fetch('./api/weather.php')
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error('Weather request failed');
