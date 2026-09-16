@@ -40,6 +40,19 @@ if (!preg_match('/^\d{8}$/', $fields['dni'])) {
     exit;
 }
 
+$birthDate = DateTimeImmutable::createFromFormat('!Y-m-d', $fields['fecha_nacimiento']);
+$birthDateErrors = DateTimeImmutable::getLastErrors();
+$birthDateIsValid = $birthDate !== false
+    && ($birthDateErrors === false || ($birthDateErrors['warning_count'] === 0 && $birthDateErrors['error_count'] === 0));
+$latestAllowedBirthDate = new DateTimeImmutable('today');
+$latestAllowedBirthDate = $latestAllowedBirthDate->modify('-16 years');
+
+if (!$birthDateIsValid || $birthDate > $latestAllowedBirthDate) {
+    http_response_code(422);
+    echo json_encode(['error' => 'Debes tener al menos 16 años']);
+    exit;
+}
+
 $normalizedPhone = preg_replace('/\D+/', '', $fields['telefono']);
 if ($normalizedPhone === null || !preg_match('/^9\d{8}$/', $normalizedPhone)) {
     http_response_code(422);

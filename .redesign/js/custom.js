@@ -170,6 +170,18 @@ jQuery(document).ready(function($) {
         var $volunteerForm = $('#volunteer-form');
         var $dniInput = $('#volunteer-dni');
         var $dniStatus = $('#volunteer-dni-status');
+        var $birthDateInput = $('#volunteer-birth-date');
+
+        function setBirthDateLimit() {
+            var maximumBirthDate = new Date();
+            maximumBirthDate.setFullYear(maximumBirthDate.getFullYear() - 16);
+            var year = maximumBirthDate.getFullYear();
+            var month = String(maximumBirthDate.getMonth() + 1).padStart(2, '0');
+            var day = String(maximumBirthDate.getDate()).padStart(2, '0');
+            $birthDateInput.attr('max', year + '-' + month + '-' + day);
+        }
+
+        setBirthDateLimit();
 
         function showVolunteerAlert(type, message) {
             if (window.alertify && typeof window.alertify[type] === 'function') {
