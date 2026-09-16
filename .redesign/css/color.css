@@ -6,7 +6,9 @@
 	background-color: #40407e;
 }
 /******** + ========== + Blue Text Color Start + ========== + ********/
-
+.vision {
+	background: url(../images/h3newsletterbg.jpg) no-repeat bottom #d94249 !important;
+}
 .sub-menu a, .logo-nav-row .dropdown-menu>li>a, .e-numbers .info-num h3, .community-box h6, .twitter-widget a.reply-tw:hover, ul.post-time a i, .add-box i, .event-counter a, .event-content ul.emeta li strong, .event-gallery .eg-thumb a, .campaign-thumb a, ul.participants li strong i {
 	color: #40407e;
 }

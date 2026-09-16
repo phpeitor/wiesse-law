@@ -2643,8 +2643,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	background: #f54337;
 	color: #fff;
 }
-.h3-logo-row {
-}
+
 .h3-logo-row .h3-logo {
 	text-align: center;
 	padding: 19px 0;
@@ -5203,6 +5202,15 @@ body .panel-group .panel+.panel {
 
 
 /***==============  Gallery Pages Start	   ==============***/
+.study-thumb {
+    width: 27%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin-right: 25px;
+    margin-top: 15px;
+    margin-bottom: -5px;
+}
 
 .gallery-thumb {
 	width: 100%;
@@ -5211,12 +5219,12 @@ body .panel-group .panel+.panel {
 	position: relative;
 	margin-bottom: 30px;
 }
-.gallery-thumb img {
+.gallery-thumb img, .study-thumb img {
 	width: 100%;
 	height: auto;
 	border-radius: 3px;
 }
-.gallery-thumb:after {
+.gallery-thumb:after, .study-thumb:after {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -5226,7 +5234,7 @@ body .panel-group .panel+.panel {
 	content: "";
 	opacity: 0;
 }
-.gallery-thumb a {
+.gallery-thumb a, .study-thumb a {
 	position: absolute;
 	left: -200px;
 	right: 0;
@@ -5243,14 +5251,14 @@ body .panel-group .panel+.panel {
 	z-index: 999;
 	opacity: 0;
 }
-.gallery-thumb:hover:after {
+.gallery-thumb:hover:after, .study-thumb:hover:after {
 	opacity: 1;
 }
-.gallery-thumb:hover a {
+.gallery-thumb:hover a, .study-thumb:hover a {
 	left: 0;
 	opacity: 1;
 }
-.gallery-thumb a:hover {
+.gallery-thumb a:hover, .study-thumb a:hover {
 	background: #d94148;
 	color: #fff;
 }
