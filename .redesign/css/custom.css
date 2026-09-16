@@ -2957,6 +2957,14 @@ li.header-weather {
 	box-shadow: 0 0 0 3px rgba(217, 65, 72, .15);
 	color: #1f1f1f;
 }
+.volunteer-modal .linput.is-invalid {
+	border: 2px solid #d9363e;
+}
+.volunteer-modal .volunteer-status {
+	display: block;
+	min-height: 18px;
+	color: #d9363e;
+}
 .volunteer-modal textarea.linput {
 	min-height: 112px;
 	padding-top: 14px;

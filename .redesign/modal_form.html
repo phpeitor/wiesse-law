@@ -6,8 +6,8 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="volunteer-form-heading">
-                <p>Going to Be A New Volunteer</p>
-                <h4 id="volunteer-modal-title">Register Your Application!</h4>
+                <p>Programa de voluntariado</p>
+                <h4 id="volunteer-modal-title">Registra tu solicitud</h4>
             </div>
             <form id="volunteer-form">
                 <div class="row">
@@ -15,7 +15,8 @@
                         <div class="volunteer-field">
                             <label class="sr-only" for="volunteer-dni">DNI</label>
                             <input type="text" class="linput" id="volunteer-dni" name="dni" maxlength="8"
-                                pattern="[0-9]{8}" inputmode="numeric" placeholder="DNI" required>
+                                pattern="[0-9]{8}" inputmode="numeric" placeholder="DNI" aria-describedby="volunteer-dni-status" required>
+                            <small id="volunteer-dni-status" class="volunteer-status" aria-live="polite"></small>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -39,11 +40,25 @@
                                 placeholder="Apellidos" required>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-email">Correo electrónico</label>
+                            <input type="email" class="linput" id="volunteer-email" name="email"
+                                placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-phone">Teléfono</label>
+                            <input type="tel" class="linput" id="volunteer-phone" name="telefono"
+                                placeholder="Teléfono" inputmode="tel" required>
+                        </div>
+                    </div>
                     <div class="col-sm-12">
                         <div class="volunteer-field">
-                            <label class="sr-only" for="volunteer-comment">¿Por qué quieres ser voluntario?</label>
+                            <label class="sr-only" for="volunteer-comment">Mensaje</label>
                             <textarea class="linput" id="volunteer-comment" name="comentario" rows="4"
-                                placeholder="¿Por qué quieres ser voluntario?" required></textarea>
+                                placeholder="Cuéntanos por qué deseas participar" required></textarea>
                         </div>
                     </div>
                 </div>

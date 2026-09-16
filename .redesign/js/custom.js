@@ -167,6 +167,72 @@ jQuery(document).ready(function($) {
     var $volunteerTrigger = null;
 
     if ($volunteerModal.length) {
+        var $volunteerForm = $('#volunteer-form');
+        var $dniInput = $('#volunteer-dni');
+        var $dniStatus = $('#volunteer-dni-status');
+
+        function markInvalidFields() {
+            var isValid = true;
+
+            $volunteerForm.find(':input[required]').each(function() {
+                var $field = $(this);
+                var fieldIsValid = this.checkValidity() && $.trim($field.val()) !== '';
+                $field.toggleClass('is-invalid', !fieldIsValid);
+                if (!fieldIsValid) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        $volunteerForm.on('input change', ':input', function() {
+            var $field = $(this);
+            if ($.trim($field.val()) !== '' && this.checkValidity()) {
+                $field.removeClass('is-invalid');
+            }
+        });
+
+        $volunteerForm.on('submit', function(event) {
+            event.preventDefault();
+            markInvalidFields();
+        });
+
+        $dniInput.on('input blur', function() {
+            var dni = this.value.replace(/\D/g, '').slice(0, 8);
+            this.value = dni;
+
+            if (dni.length !== 8) {
+                $dniStatus.text('');
+                return;
+            }
+
+            $dniStatus.text('Consultando datos...').css('color', '#555');
+            fetch('./api/dni.php?dni=' + encodeURIComponent(dni))
+                .then(function(response) {
+                    return response.json().then(function(data) {
+                        if (!response.ok) {
+                            throw new Error(data.error || 'No se pudo validar el DNI');
+                        }
+                        return data;
+                    });
+                })
+                .then(function(data) {
+                    if (data.nombres) {
+                        $('#volunteer-first-name').val(data.nombres).removeClass('is-invalid');
+                    }
+                    if (data.apellidos) {
+                        $('#volunteer-last-name').val(data.apellidos).removeClass('is-invalid');
+                    }
+                    $dniStatus.text('DNI validado').css('color', '#238636');
+                    $dniInput.removeClass('is-invalid');
+                })
+                .catch(function(error) {
+                    $dniStatus.text(error.message).css('color', '#d9363e');
+                    $dniInput.addClass('is-invalid');
+                });
+        });
+
         $volunteerModal.on('show.bs.modal', function(event) {
             $volunteerTrigger = $(event.relatedTarget || document.activeElement);
             $volunteerModal.attr('aria-hidden', 'false');
