@@ -59,12 +59,25 @@ function requestJson(string $url): ?array
     return is_array($data) ? $data : null;
 }
 
+function hasIdentityData(?array $data): bool
+{
+    if (!$data) {
+        return false;
+    }
+
+    return trim((string) ($data['nombre'] ?? $data['name'] ?? $data['nombres'] ?? '')) !== ''
+        || trim((string) ($data['apellidoPaterno'] ?? '')) !== '';
+}
+
 $primaryUrl = readEnvValue('API_DNI_URL');
 $fallbackUrl = readEnvValue('API_DNI_URL_2');
 $data = null;
 
 if ($primaryUrl) {
     $data = requestJson($primaryUrl . urlencode($dni));
+    if (!hasIdentityData($data)) {
+        $data = null;
+    }
 }
 
 if (!$data && $fallbackUrl) {
@@ -78,8 +91,8 @@ if (!$data && $fallbackUrl) {
 }
 
 if (!$data) {
-    http_response_code(502);
-    echo json_encode(['error' => 'No se pudo consultar el DNI']);
+    http_response_code(404);
+    echo json_encode(['error' => 'DNI no encontrado']);
     exit;
 }
 
@@ -89,8 +102,14 @@ $apellidos = trim((string) ($data['apellidoPaterno'] ?? '') . ' ' . (string) ($d
 
 if ($nombres === '' && $apellidos === '' && $name !== '') {
     $parts = preg_split('/\s+/', $name);
-    $nombres = (string) array_pop($parts);
-    $apellidos = trim(implode(' ', $parts));
+    $apellidos = trim(implode(' ', array_slice($parts, 0, 2)));
+    $nombres = trim(implode(' ', array_slice($parts, 2)));
+}
+
+if ($nombres === '' && $apellidos === '') {
+    http_response_code(404);
+    echo json_encode(['error' => 'DNI no encontrado']);
+    exit;
 }
 
 echo json_encode([

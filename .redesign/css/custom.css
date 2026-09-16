@@ -87,6 +87,15 @@ html body {
 	font-family: 'Lato', sans-serif;
 	color: #777777;
 }
+
+.form_label{
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+    font-size: 16px;
+    padding: 0 10px 0 0;
+
+}
+
 p {
 	font-family: 'Lato', sans-serif;
 	color: #777;
@@ -2961,9 +2970,19 @@ li.header-weather {
 	border: 2px solid #d9363e;
 }
 .volunteer-modal .volunteer-status {
+	position: absolute;
+	left: 0;
+	top: 56px;
 	display: block;
 	min-height: 18px;
 	color: #d9363e;
+}
+.volunteer-modal .volunteer-dni-field {
+	position: relative;
+	margin-bottom: 36px;
+}
+.volunteer-modal .volunteer-date-field {
+	margin-bottom: 36px;
 }
 .volunteer-modal textarea.linput {
 	min-height: 112px;

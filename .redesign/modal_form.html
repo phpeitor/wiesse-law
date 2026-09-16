@@ -12,16 +12,16 @@
             <form id="volunteer-form">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="volunteer-field">
-                            <label class="sr-only" for="volunteer-dni">DNI</label>
+                        <div class="volunteer-field volunteer-dni-field">
+                            <label class="form_label" for="volunteer-dni">DNI</label>
                             <input type="text" class="linput" id="volunteer-dni" name="dni" maxlength="8"
-                                pattern="[0-9]{8}" inputmode="numeric" placeholder="DNI" aria-describedby="volunteer-dni-status" required>
+                                pattern="[0-9]{8}" inputmode="numeric" placeholder="12345678" aria-describedby="volunteer-dni-status" required>
                             <small id="volunteer-dni-status" class="volunteer-status" aria-live="polite"></small>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="volunteer-field">
-                            <label class="sr-only" for="volunteer-birth-date">Fecha de nacimiento</label>
+                        <div class="volunteer-field volunteer-date-field">
+                            <label class="form_label" for="volunteer-birth-date">Fecha Nacimiento</label>
                             <input type="date" class="linput" id="volunteer-birth-date" name="fecha_nacimiento"
                                 required>
                         </div>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="volunteer-field">
-                            <label class="sr-only" for="volunteer-email">Correo electrónico</label>
+                            <label class="sr-only" for="volunteer-email">Correo Electrónico</label>
                             <input type="email" class="linput" id="volunteer-email" name="email"
                                 placeholder="Correo electrónico" required>
                         </div>

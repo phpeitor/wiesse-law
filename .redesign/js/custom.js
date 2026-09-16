@@ -201,6 +201,7 @@ jQuery(document).ready(function($) {
         $dniInput.on('input blur', function() {
             var dni = this.value.replace(/\D/g, '').slice(0, 8);
             this.value = dni;
+            $('#volunteer-first-name, #volunteer-last-name').val('').removeClass('is-invalid');
 
             if (dni.length !== 8) {
                 $dniStatus.text('');
@@ -218,12 +219,11 @@ jQuery(document).ready(function($) {
                     });
                 })
                 .then(function(data) {
-                    if (data.nombres) {
-                        $('#volunteer-first-name').val(data.nombres).removeClass('is-invalid');
+                    if (!data.nombres && !data.apellidos) {
+                        throw new Error('DNI no encontrado');
                     }
-                    if (data.apellidos) {
-                        $('#volunteer-last-name').val(data.apellidos).removeClass('is-invalid');
-                    }
+                    $('#volunteer-first-name').val(data.nombres || '').removeClass('is-invalid');
+                    $('#volunteer-last-name').val(data.apellidos || '').removeClass('is-invalid');
                     $dniStatus.text('DNI validado').css('color', '#238636');
                     $dniInput.removeClass('is-invalid');
                 })
