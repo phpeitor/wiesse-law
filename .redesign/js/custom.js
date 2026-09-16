@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
     "use strict"
 
+    document.getElementById("current-year").textContent = new Date().getFullYear();
 
     // ------- Navigation ------- //
     if ($('ul.nav li.dropdown').length) {

@@ -2503,7 +2503,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 .textwidget img,
 .sidebar-header img {
-	width: 90px;
+	width: 120px;
 	height: auto;
 	display: block;
 	margin-bottom: 18px;

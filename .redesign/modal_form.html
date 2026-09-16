@@ -1,0 +1,54 @@
+<div class="modal fade volunteer-modal" id="volunteer-modal" tabindex="-1" role="dialog"
+    aria-labelledby="volunteer-modal-title" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content register-account">
+            <button type="button" class="close volunteer-close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="volunteer-form-heading">
+                <p>Going to Be A New Volunteer</p>
+                <h4 id="volunteer-modal-title">Register Your Application!</h4>
+            </div>
+            <form id="volunteer-form">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-dni">DNI</label>
+                            <input type="text" class="linput" id="volunteer-dni" name="dni" maxlength="8"
+                                pattern="[0-9]{8}" inputmode="numeric" placeholder="DNI" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-birth-date">Fecha de nacimiento</label>
+                            <input type="date" class="linput" id="volunteer-birth-date" name="fecha_nacimiento"
+                                required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-first-name">Nombres</label>
+                            <input type="text" class="linput" id="volunteer-first-name" name="nombres"
+                                placeholder="Nombres" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-last-name">Apellidos</label>
+                            <input type="text" class="linput" id="volunteer-last-name" name="apellidos"
+                                placeholder="Apellidos" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="volunteer-field">
+                            <label class="sr-only" for="volunteer-comment">¿Por qué quieres ser voluntario?</label>
+                            <textarea class="linput" id="volunteer-comment" name="comentario" rows="4"
+                                placeholder="¿Por qué quieres ser voluntario?" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">ENVIAR SOLICITUD</button>
+            </form>
+        </div>
+    </div>
+</div>
