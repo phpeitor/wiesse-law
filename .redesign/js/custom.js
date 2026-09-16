@@ -171,6 +171,12 @@ jQuery(document).ready(function($) {
         var $dniInput = $('#volunteer-dni');
         var $dniStatus = $('#volunteer-dni-status');
 
+        function showVolunteerAlert(type, message) {
+            if (window.alertify && typeof window.alertify[type] === 'function') {
+                window.alertify[type](message);
+            }
+        }
+
         function markInvalidFields() {
             var isValid = true;
 
@@ -196,6 +202,7 @@ jQuery(document).ready(function($) {
         $volunteerForm.on('submit', function(event) {
             event.preventDefault();
             if (!markInvalidFields()) {
+                showVolunteerAlert('error', 'Completa correctamente todos los campos obligatorios.');
                 return;
             }
 
@@ -223,7 +230,9 @@ jQuery(document).ready(function($) {
                     });
                 })
                 .then(function(data) {
-                    $formStatus.text(data.message || 'Solicitud guardada correctamente.');
+                    var successMessage = data.message || 'Solicitud guardada correctamente.';
+                    showVolunteerAlert('success', successMessage);
+                    $formStatus.text(successMessage);
                     $volunteerForm[0].reset();
                     $dniStatus.text('');
                     setTimeout(function() {
@@ -232,6 +241,7 @@ jQuery(document).ready(function($) {
                     }, 500);
                 })
                 .catch(function(error) {
+                    showVolunteerAlert('error', error.message);
                     $formStatus.addClass('is-error').text(error.message);
                 })
                 .finally(function() {
@@ -269,6 +279,7 @@ jQuery(document).ready(function($) {
                     $dniInput.removeClass('is-invalid');
                 })
                 .catch(function(error) {
+                    showVolunteerAlert('error', error.message);
                     $dniStatus.text(error.message).css('color', '#d9363e');
                     $dniInput.addClass('is-invalid');
                 });

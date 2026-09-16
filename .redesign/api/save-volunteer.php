@@ -41,7 +41,7 @@ if (!preg_match('/^\d{8}$/', $fields['dni'])) {
 }
 
 $normalizedPhone = preg_replace('/\D+/', '', $fields['telefono']);
-if ($normalizedPhone === null || strlen($normalizedPhone) < 7 || strlen($normalizedPhone) > 15) {
+if ($normalizedPhone === null || !preg_match('/^9\d{8}$/', $normalizedPhone)) {
     http_response_code(422);
     echo json_encode(['error' => 'El teléfono no es válido']);
     exit;
