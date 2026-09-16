@@ -2947,6 +2947,13 @@ li.header-weather {
 .volunteer-modal .volunteer-field {
 	margin-bottom: 18px;
 }
+.volunteer-modal form > .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.volunteer-modal form > .row > [class*="col-"] {
+	float: none;
+}
 .volunteer-modal .linput {
 	display: block;
 	min-height: 53px;
@@ -2970,11 +2977,9 @@ li.header-weather {
 	border: 2px solid #d9363e;
 }
 .volunteer-modal .volunteer-status {
-	position: absolute;
-	left: 0;
-	top: 56px;
-	display: block;
-	min-height: 18px;
+	display: inline-block;
+	margin-left: 8px;
+	min-height: 0;
 	color: #d9363e;
 }
 .volunteer-modal .volunteer-dni-field {

@@ -9,18 +9,17 @@
                 <p>Programa de voluntariado</p>
                 <h4 id="volunteer-modal-title">Registra tu solicitud</h4>
             </div>
-            <form id="volunteer-form">
+            <form id="volunteer-form" novalidate>
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="volunteer-field volunteer-dni-field">
-                            <label class="form_label" for="volunteer-dni">DNI</label>
+                        <div class="volunteer-field">
+                            <label class="form_label" for="volunteer-dni">DNI <small id="volunteer-dni-status" class="volunteer-status" aria-live="polite"></small></label>
                             <input type="text" class="linput" id="volunteer-dni" name="dni" maxlength="8"
                                 pattern="[0-9]{8}" inputmode="numeric" placeholder="12345678" aria-describedby="volunteer-dni-status" required>
-                            <small id="volunteer-dni-status" class="volunteer-status" aria-live="polite"></small>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="volunteer-field volunteer-date-field">
+                        <div class="volunteer-field">
                             <label class="form_label" for="volunteer-birth-date">Fecha Nacimiento</label>
                             <input type="date" class="linput" id="volunteer-birth-date" name="fecha_nacimiento"
                                 required>

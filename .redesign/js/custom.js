@@ -220,11 +220,11 @@ jQuery(document).ready(function($) {
                 })
                 .then(function(data) {
                     if (!data.nombres && !data.apellidos) {
-                        throw new Error('DNI no encontrado');
+                        throw new Error('Documento no encontrado');
                     }
                     $('#volunteer-first-name').val(data.nombres || '').removeClass('is-invalid');
                     $('#volunteer-last-name').val(data.apellidos || '').removeClass('is-invalid');
-                    $dniStatus.text('DNI validado').css('color', '#238636');
+                    $dniStatus.text('Documento validado').css('color', '#238636');
                     $dniInput.removeClass('is-invalid');
                 })
                 .catch(function(error) {
