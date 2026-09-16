@@ -2501,6 +2501,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .footer-widget ul li a:hover {
 	color: #d94148;
 }
+.textwidget img,
+.sidebar-header img {
+	width: 90px;
+	height: auto;
+	display: block;
+	margin-bottom: 18px;
+	max-width: 100%;
+}
 .textwidget address ul {
 	margin: 20px 0 0;
 	padding: 0px;
