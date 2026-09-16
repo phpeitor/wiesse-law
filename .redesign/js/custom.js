@@ -195,7 +195,48 @@ jQuery(document).ready(function($) {
 
         $volunteerForm.on('submit', function(event) {
             event.preventDefault();
-            markInvalidFields();
+            if (!markInvalidFields()) {
+                return;
+            }
+
+            var $submitButton = $volunteerForm.find('button[type="submit"]');
+            var $formStatus = $('#volunteer-form-status');
+            var formData = {};
+            $volunteerForm.serializeArray().forEach(function(field) {
+                formData[field.name] = field.value.trim();
+            });
+
+            $submitButton.prop('disabled', true);
+            $formStatus.removeClass('is-error').text('Guardando solicitud...');
+
+            fetch('./api/save-volunteer.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            })
+                .then(function(response) {
+                    return response.json().then(function(data) {
+                        if (!response.ok) {
+                            throw new Error(data.error || 'No se pudo guardar la solicitud');
+                        }
+                        return data;
+                    });
+                })
+                .then(function(data) {
+                    $formStatus.text(data.message || 'Solicitud guardada correctamente.');
+                    $volunteerForm[0].reset();
+                    $dniStatus.text('');
+                    setTimeout(function() {
+                        $volunteerModal.modal('hide');
+                        $formStatus.text('');
+                    }, 500);
+                })
+                .catch(function(error) {
+                    $formStatus.addClass('is-error').text(error.message);
+                })
+                .finally(function() {
+                    $submitButton.prop('disabled', false);
+                });
         });
 
         $dniInput.on('input blur', function() {

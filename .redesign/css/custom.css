@@ -3017,6 +3017,15 @@ li.header-weather {
 	background: #fff;
 	color: #d94148;
 }
+.volunteer-modal .volunteer-form-status {
+	min-height: 20px;
+	margin: 12px 0 0;
+	text-align: center;
+	color: #fff;
+}
+.volunteer-modal .volunteer-form-status.is-error {
+	color: #ffb3b3;
+}
 .pp_pic_holder .ppt {
 	display: none !important;
 }
