@@ -5515,6 +5515,10 @@ body .panel-group .panel+.panel {
 	left: 0;
 	opacity: 1;
 }
+.gallery-thumb.lightbox-ready a {
+	left: 0;
+	opacity: 1;
+}
 .gallery-thumb a:hover, .study-thumb a:hover {
 	background: #d94148;
 	color: #fff;
