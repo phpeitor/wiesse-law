@@ -162,6 +162,17 @@ jQuery(document).ready(function($) {
     }
     // ------- Close Btn ------- //
 
+    var $legalVideoModal = $('#legal-video-modal');
+    var $legalVideoFrame = $('#legal-video-frame');
+    if ($legalVideoModal.length && $legalVideoFrame.length) {
+        $legalVideoModal.on('show.bs.modal', function() {
+            $legalVideoFrame.attr('src', $legalVideoFrame.data('src'));
+        });
+        $legalVideoModal.on('hidden.bs.modal', function() {
+            $legalVideoFrame.attr('src', 'about:blank');
+        });
+    }
+
     // Ensure Bootstrap modal cleanup is complete so the page is restored immediately
     var $volunteerModal = $('#volunteer-modal');
     var $volunteerTrigger = null;

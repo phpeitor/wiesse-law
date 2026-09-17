@@ -146,8 +146,8 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-5">
                             <!--Mayor Msg Start-->
-                            <div class="city-tour gallery"> <strong> Entrevista </strong> <a
-                                    href="https://www.youtube.com/watch?v=i8OAr43wWxg" data-rel="prettyPhoto" title="Wiesse & Consultores"><img
+                                    <div class="city-tour gallery"> <strong> Entrevista </strong> <a
+                                    href="#legal-video-modal" class="legal-video-trigger" data-toggle="modal" aria-label="Ver entrevista en YouTube"><img
                                         src="./images/playicon.png" alt=""></a> <img src="./images/h3mayer.jpg" alt="">
                             </div>
                             <!--Mayor Msg End-->
@@ -808,6 +808,24 @@
 
         <script src="./js/includes.js" data-include="footer.html"></script>
         
+    </div>
+
+    <div class="modal fade legal-video-modal" id="legal-video-modal" tabindex="-1" role="dialog"
+        aria-labelledby="legal-video-title" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <button type="button" class="close legal-video-close" data-dismiss="modal" aria-label="Cerrar video">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="legal-video-frame" class="embed-responsive-item"
+                        data-src="https://www.youtube.com/embed/i8OAr43wWxg?rel=0&modestbranding=1"
+                        title="Entrevista a Wiesse y Consultores" allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <h4 id="legal-video-title" class="sr-only">Entrevista a Wiesse y Consultores</h4>
+            </div>
+        </div>
     </div>
 
     <div class="floating-actions" aria-label="Acciones rápidas">

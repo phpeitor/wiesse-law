@@ -403,6 +403,26 @@ header {
 .floating-action i {
 	font-size: 20px;
 }
+.legal-video-modal .modal-content {
+	background: #11152d;
+	border: 0;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.legal-video-modal .legal-video-close {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	z-index: 2;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 300;
+	text-shadow: 0 1px 3px #000;
+	opacity: .9;
+}
+.legal-video-modal .embed-responsive {
+	background: #000;
+}
 .floating-action::before,
 .floating-action::after {
 	position: absolute;
