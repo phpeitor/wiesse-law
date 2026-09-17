@@ -92,7 +92,9 @@ jQuery(document).ready(function($) {
         animation_speed: 'normal',
         theme: 'light_square',
         slideshow: 3000,
-        autoplay_slideshow: false
+        autoplay_slideshow: false,
+        allow_expand: false,
+        social_tools: false
     });
     // ------- Pretty Photo End ------- // 
 
