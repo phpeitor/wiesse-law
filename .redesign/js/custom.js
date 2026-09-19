@@ -13,6 +13,15 @@ jQuery(document).ready(function($) {
     }
     // ------- Navigation End ------- //
 
+    // ------- City Location ------- //
+    $('.city-exp').on('click keydown', function(event) {
+        if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+
+        event.preventDefault();
+        window.open('https://www.google.com/maps/search/?api=1&query=-6.783831,-79.84848', '_blank', 'noopener');
+    });
+    // ------- City Location End ------- //
+
 
     // ------- Home Slider Start ------- //
     if ($('#home-slider').length) {
