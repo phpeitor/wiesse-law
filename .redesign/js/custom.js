@@ -570,7 +570,7 @@ jQuery(document).ready(function($) {
                 if (typeof temperatures[index] === 'number') {
                     var celsius = temperatures[index];
                     var fahrenheit = (celsius * 9 / 5) + 32;
-                    label.textContent = celsius.toFixed(0) + '°C / ' + fahrenheit.toFixed(0) + '°F';
+                    label.textContent = celsius.toFixed(1) + '°C / ' + fahrenheit.toFixed(1) + '°F';
                 } else {
                     label.textContent = 'Sin datos';
                 }
@@ -617,4 +617,4 @@ jQuery(document).ready(function($) {
             };
         }
     }
-    // ------- Site Sticky Footer End ------- //	
+    // ------- Site Sticky Footer End ------- //
