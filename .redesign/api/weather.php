@@ -35,7 +35,7 @@ if (!$weatherApi || !filter_var($weatherApi, FILTER_VALIDATE_URL)) {
     exit;
 }
 
-$today = (new DateTimeImmutable('now'))->format('Y-m-d');
+$today = (new DateTimeImmutable('now', new DateTimeZone('America/Lima')))->format('Y-m-d');
 $query = http_build_query([
     'start_date' => $today,
     'end_date' => $today,
