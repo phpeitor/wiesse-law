@@ -2846,6 +2846,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	color: #fff;
 	box-shadow: 0 10px 18px rgba(217, 65, 72, .28);
 }
+.mobile-donate {
+	display: none;
+}
 
 .h3-logo-row .h3-logo {
 	text-align: center;
