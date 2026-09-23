@@ -2849,6 +2849,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .mobile-donate {
 	display: none;
 }
+@keyframes donate-pulse {
+	0%, 100% {
+		box-shadow: 0 0 0 0 rgba(33, 177, 91, .55);
+	}
+	50% {
+		box-shadow: 0 0 0 7px rgba(33, 177, 91, 0);
+	}
+}
 
 .h3-logo-row .h3-logo {
 	text-align: center;

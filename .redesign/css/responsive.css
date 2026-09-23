@@ -707,7 +707,7 @@ li.header-weather {
 .header-two .topbar .mobile-donate {
 	display: block;
 	float: right;
-	background: #40407e;
+	background: linear-gradient(135deg, #24bd62 0%, #149447 100%);
 	color: #fff;
 	line-height: 34px;
 	padding: 0 12px;
@@ -715,6 +715,14 @@ li.header-weather {
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
+	border-radius: 2px;
+	box-shadow: 0 4px 12px rgba(20, 148, 71, .35);
+	animation: donate-pulse 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+	.header-two .topbar .mobile-donate {
+		animation: none;
+	}
 }
 .Mayor-video-msg .city-tour {
 	margin: 0 0 30px;
