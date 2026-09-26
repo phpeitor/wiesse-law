@@ -423,6 +423,68 @@ header {
 .legal-video-modal .embed-responsive {
 	background: #000;
 }
+.legal-video-modal .modal-lg {
+	max-width: 520px;
+}
+.legal-video-modal .legal-video-retry {
+	position: absolute;
+	left: 12px;
+	top: 6px;
+	z-index: 2;
+	padding: 7px 9px;
+	background: transparent;
+	border: 0;
+	color: rgba(255, 255, 255, .82);
+	font-size: 12px;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	line-height: 1;
+}
+.legal-video-modal .legal-video-retry i {
+	margin-right: 6px;
+}
+.legal-video-modal .legal-video-retry:hover,
+.legal-video-modal .legal-video-retry:focus {
+	color: #fff;
+	outline: 1px solid rgba(255, 255, 255, .55);
+	outline-offset: 2px;
+}
+.legal-video-modal .legal-video-hint {
+	margin: 0;
+	padding: 10px 16px 14px;
+	text-align: center;
+	color: rgba(255, 255, 255, .55);
+	font-size: 12px;
+	line-height: 1.5;
+}
+.legal-video-modal .legal-video-hint strong {
+	color: rgba(255, 255, 255, .85);
+	font-weight: 600;
+}
+.legal-video-modal .legal-video-hint a {
+	color: #20d5ec;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+.legal-video-modal .legal-video-hint a:hover,
+.legal-video-modal .legal-video-hint a:focus {
+	color: #fff;
+}
+.legal-video-modal .embed-responsive-vert {
+	height: auto;
+	padding-bottom: 0;
+	aspect-ratio: 9 / 16;
+	width: min(100%, 420px, calc(78vh * 9 / 16));
+	margin: 0 auto;
+}
+.legal-video-modal .embed-responsive-vert .embed-responsive-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
 .floating-action::before,
 .floating-action::after {
 	position: absolute;
@@ -1821,11 +1883,56 @@ ul.team-social a:hover {
 }
 .city-tour a {
 	position: absolute;
-	right: 20px;
-	bottom: 20px;
+	right: 0px;
+	bottom: 0px;
+}
+.city-tour a img {
+	width: 20%;
+	height: auto;
 }
 .city-tour a:hover img {
 	opacity: .7;
+}
+.city-tour .legal-video-trigger {
+	position: absolute;
+	left: 8px;
+	right: auto;
+	bottom: 6px;
+	width: max-content;
+	display: block;
+	transform-origin: 50% 100%;
+	animation: legal-tiktok-bounce 2.6s ease-in-out infinite;
+}
+.city-tour .legal-video-trigger img {
+	display: block;
+	transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+}
+.city-tour .legal-video-trigger:hover img,
+.city-tour .legal-video-trigger:focus-visible img {
+	opacity: .85;
+	transform: scale(1.08);
+}
+@keyframes legal-tiktok-bounce {
+	0%, 55%, 100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	63% {
+		transform: translateY(-14px) rotate(-4deg);
+	}
+	71% {
+		transform: translateY(0) rotate(3deg);
+	}
+	78% {
+		transform: translateY(-7px) rotate(-2deg);
+	}
+	85% {
+		transform: translateY(0) rotate(0deg);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.city-tour .legal-video-trigger {
+		animation: none;
+	}
 }
 /*** + === + Mayor MSG End + === + ***/
 

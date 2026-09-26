@@ -175,13 +175,17 @@ jQuery(document).ready(function($) {
 
     var $legalVideoModal = $('#legal-video-modal');
     var $legalVideoFrame = $('#legal-video-frame');
+    var $legalVideoRetry = $('.legal-video-retry');
+    function loadLegalVideo() {
+        var videoSrc = $legalVideoFrame.data('src');
+        $legalVideoFrame.attr('src', videoSrc + (videoSrc.indexOf('?') > -1 ? '&' : '?') + 'retry=' + new Date().getTime());
+    }
     if ($legalVideoModal.length && $legalVideoFrame.length) {
-        $legalVideoModal.on('show.bs.modal', function() {
-            $legalVideoFrame.attr('src', $legalVideoFrame.data('src'));
-        });
+        $legalVideoModal.on('show.bs.modal', loadLegalVideo);
         $legalVideoModal.on('hidden.bs.modal', function() {
             $legalVideoFrame.attr('src', 'about:blank');
         });
+        $legalVideoRetry.on('click', loadLegalVideo);
     }
 
     // Ensure Bootstrap modal cleanup is complete so the page is restored immediately

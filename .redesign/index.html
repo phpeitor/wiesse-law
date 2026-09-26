@@ -147,8 +147,8 @@
                         <div class="col-md-4 col-sm-5">
                             <!--Mayor Msg Start-->
                                     <div class="city-tour gallery"> <strong> Entrevista </strong> <a
-                                    href="#legal-video-modal" class="legal-video-trigger" data-toggle="modal" aria-label="Ver entrevista en YouTube"><img
-                                        src="./images/playicon.png" alt=""></a> <img src="./images/h3mayer.jpg" alt="">
+                                    href="#legal-video-modal" class="legal-video-trigger" data-toggle="modal" aria-label="Ver video"><img
+                                        src="./images/tiktok.webp" alt=""></a> <img src="./images/h3mayer.jpg" alt="">
                             </div>
                             <!--Mayor Msg End-->
                         </div>
@@ -817,13 +817,19 @@
                 <button type="button" class="close legal-video-close" data-dismiss="modal" aria-label="Cerrar video">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <div class="embed-responsive embed-responsive-16by9">
+                <button type="button" class="legal-video-retry" aria-label="Reintentar carga del video">
+                    <i class="fas fa-redo" aria-hidden="true"></i><span>Reintentar</span>
+                </button>
+                <div class="embed-responsive embed-responsive-vert">
                     <iframe id="legal-video-frame" class="embed-responsive-item"
-                        data-src="https://www.youtube.com/embed/i8OAr43wWxg?rel=0&modestbranding=1"
-                        title="Entrevista a Wiesse y Consultores" allow="autoplay; encrypted-media; picture-in-picture"
+                        data-src="https://www.tiktok.com/embed/v2/7588903704720444680"
+                        title="Carlos Wiesse en TikTok" allow="autoplay; encrypted-media; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
-                <h4 id="legal-video-title" class="sr-only">Entrevista a Wiesse y Consultores</h4>
+                <p class="legal-video-hint">¿El video no reproduce? Pulsa <strong>Reintentar</strong> o
+                    <a href="https://www.tiktok.com/@carlos.wiesse31/video/7588903704720444680" target="_blank"
+                        rel="noopener">ábrelo en TikTok</a>.</p>
+                <h4 id="legal-video-title" class="sr-only">Carlos Wiesse en TikTok</h4>
             </div>
         </div>
     </div>
