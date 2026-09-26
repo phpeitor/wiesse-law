@@ -220,6 +220,12 @@ jQuery(document).ready(function($) {
         });
     }
 
+    // Some plugins (Revolution Slider) cache the viewport width while Bootstrap
+    // hides the scrollbar with a modal open. Re-announce the size once closed.
+    $(document).on('hidden.bs.modal', function() {
+        window.dispatchEvent(new Event('resize'));
+    });
+
     // ------- Mission / Vision word reveal ------- //
     var $revealTexts = $('.news-details blockquote > p');
     var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
