@@ -1898,7 +1898,7 @@ ul.team-social a:hover {
 	left: 8px;
 	right: auto;
 	bottom: 6px;
-	width: 20%;
+	width: 15%;
 	display: block;
 	transform-origin: 50% 100%;
 	animation: legal-tiktok-bounce 2.6s ease-in-out infinite;
@@ -4037,8 +4037,8 @@ ul.rep-comments {
 }
 #servicio-detalle .modal-header .close {
 	position: absolute;
-	right: -6px;
-	top: -8px;
+	right: 14px;
+	top: 8px;
 	float: none;
 	font-size: 30px;
 	opacity: .45;
@@ -4055,9 +4055,16 @@ ul.rep-comments {
 	margin: 0 auto 16px;
 }
 #servicio-detalle .deprt-sublist {
-	display: inline-block;
+	display: block;
+	width: -moz-fit-content;
+	width: fit-content;
+	max-width: 100%;
+	margin: 0 auto 14px;
 	text-align: left;
-	margin: 0 0 14px;
+}
+#servicio-detalle .deprt-sublist + .deprt-sublist {
+	border-top: 1px solid #eee;
+	padding-top: 14px;
 }
 #servicio-detalle .modal-body > .deprt-sublist:last-child {
 	margin-bottom: 0;
