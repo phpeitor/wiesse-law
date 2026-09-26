@@ -1898,13 +1898,15 @@ ul.team-social a:hover {
 	left: 8px;
 	right: auto;
 	bottom: 6px;
-	width: max-content;
+	width: 20%;
 	display: block;
 	transform-origin: 50% 100%;
 	animation: legal-tiktok-bounce 2.6s ease-in-out infinite;
 }
 .city-tour .legal-video-trigger img {
 	display: block;
+	width: 100%;
+	height: auto;
 	transition: transform .25s ease-in-out, opacity .25s ease-in-out;
 }
 .city-tour .legal-video-trigger:hover img,
