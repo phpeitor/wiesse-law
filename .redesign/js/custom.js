@@ -188,6 +188,38 @@ jQuery(document).ready(function($) {
         $legalVideoRetry.on('click', loadLegalVideo);
     }
 
+    // ------- Service detail modal ------- //
+    var $serviceModal = $('#servicio-detalle');
+    var $serviceData = $('#servicio-datos');
+    var $serviceBody = $('#servicio-detalle-body');
+    var $serviceTitle = $('#servicio-detalle-title');
+
+    if ($serviceModal.length && $serviceData.length) {
+        var serviceContactHtml = $serviceData.find('[data-servicio="contacto"]').html() || '';
+        $serviceModal.on('show.bs.modal', function(event) {
+            var $trigger = event.relatedTarget ? $(event.relatedTarget) : $();
+            var serviceKey = $trigger.attr('data-servicio') || '';
+            var $serviceBlock = $serviceData.find('[data-servicio="' + serviceKey + '"]');
+            var $card = $trigger.closest('.deprt-icon-box');
+            var cardTitle = ($card.find('h6 a').text() || '').trim();
+            var cardIcon = $card.find('img').attr('src');
+            var cardDetailHtml = $serviceBlock.length ? $serviceBlock.html() : '';
+
+            $serviceTitle.text(cardTitle || 'Servicio');
+            $serviceBody.empty();
+
+            if (cardIcon) {
+                $serviceBody.append($('<img>', { 'class': 'servicio-detalle-icon', src: cardIcon, alt: '' }));
+            }
+            if (cardDetailHtml && cardDetailHtml.trim()) {
+                $serviceBody.append(cardDetailHtml);
+            }
+            if (serviceContactHtml) {
+                $serviceBody.append(serviceContactHtml);
+            }
+        });
+    }
+
     // ------- Mission / Vision word reveal ------- //
     var $revealTexts = $('.news-details blockquote > p');
     var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

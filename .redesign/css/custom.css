@@ -3954,6 +3954,175 @@ ul.rep-comments {
 	background: #40407e;
 	color: #fff;
 }
+.service-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+.row.service-grid::before,
+.row.service-grid::after {
+	display: none;
+}
+@media (min-width: 768px) {
+	.service-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.service-grid > [class*="col-"] {
+	display: flex;
+	width: auto;
+}
+.depart-info .service-grid .deprt-icon-box {
+	flex: 1 1 auto;
+	height: auto;
+	min-height: 225px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+}
+.depart-info .service-grid .deprt-icon-box:hover {
+	padding: 40px;
+}
+.depart-info .service-grid .deprt-icon-box a.rm {
+	align-self: center;
+	margin-top: auto;
+	opacity: 1;
+}
+.deprt-sublist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+	color: #666;
+}
+.deprt-sublist li {
+	margin-bottom: 6px;
+}
+.deprt-sublist i {
+	color: #d94148;
+	font-size: 12px;
+	margin-right: 6px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.depart-info .service-grid .deprt-icon-box,
+	.depart-info .service-grid .deprt-icon-box:hover {
+		padding: 20px;
+	}
+}
+/* --- Modal detalle de servicio --- */
+.modal-servicio {
+	max-width: 460px;
+}
+#servicio-detalle .modal-content {
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 18px 45px rgba(20, 24, 54, .28);
+}
+#servicio-detalle .modal-header {
+	border-bottom: 0;
+	padding-bottom: 0;
+	display: block;
+	position: relative;
+}
+#servicio-detalle .modal-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #222;
+	padding-right: 34px;
+	text-align: left;
+}
+#servicio-detalle .modal-body {
+	padding-top: 18px;
+	text-align: center;
+}
+#servicio-detalle .modal-header .close {
+	position: absolute;
+	right: -6px;
+	top: -8px;
+	float: none;
+	font-size: 30px;
+	opacity: .45;
+	text-shadow: none;
+}
+#servicio-detalle .modal-header .close:hover,
+#servicio-detalle .modal-header .close:focus {
+	opacity: .9;
+}
+.servicio-detalle-icon {
+	display: block;
+	width: 72px;
+	height: 72px;
+	margin: 0 auto 16px;
+}
+#servicio-detalle .deprt-sublist {
+	display: inline-block;
+	text-align: left;
+	margin: 0 0 14px;
+}
+#servicio-detalle .modal-body > .deprt-sublist:last-child {
+	margin-bottom: 0;
+}
+#servicio-detalle .deprt-sublist a {
+	color: #40407e;
+}
+#servicio-detalle .deprt-sublist a:hover,
+#servicio-detalle .deprt-sublist a:focus {
+	color: #d94148;
+}
+#servicio-detalle .modal-footer {
+	border-top: 1px solid #eee;
+	text-align: center;
+	padding: 15px;
+}
+#servicio-detalle .modal-footer .btn-servicio {
+	float: none;
+	display: inline-block;
+	margin: 0 5px;
+}
+.btn-servicio {
+	display: inline-block;
+	line-height: 24px;
+	padding: 0 18px;
+	border-radius: 14px;
+	border: 1px solid transparent;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+}
+.btn-servicio-cta {
+	background: #d94148;
+	color: #fff;
+}
+.btn-servicio-cta:hover,
+.btn-servicio-cta:focus {
+	background: #40407e;
+	color: #fff;
+	text-decoration: none;
+}
+.btn-servicio-wa {
+	background: #fff;
+	border-color: #d94148;
+	color: #d94148;
+}
+.btn-servicio-wa:hover,
+.btn-servicio-wa:focus {
+	background: #d94148;
+	color: #fff;
+	text-decoration: none;
+}
+.btn-servicio-wa i {
+	margin-right: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+	#servicio-detalle,
+	#servicio-detalle .modal-dialog {
+		transition: none;
+	}
+	body .modal-backdrop.fade {
+		transition: none;
+	}
+}
 a.jobs-link {
 	background: #d94148;
 	display: block;
