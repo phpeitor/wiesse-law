@@ -3598,6 +3598,40 @@ li.header-weather {
 	font-style: italic;
 	line-height: 32px;
 }
+.news-details blockquote p .rw-word {
+	display: inline-block;
+}
+.news-details blockquote p.rw-pending .rw-word {
+	opacity: 0;
+	filter: blur(6px);
+	transform: translateY(10px);
+}
+.news-details blockquote p.rw-in .rw-word {
+	animation: rw-word-in .55s cubic-bezier(.22, .61, .36, 1) both;
+	animation-delay: var(--rw-delay, 0s);
+}
+@keyframes rw-word-in {
+	from {
+		opacity: 0;
+		filter: blur(6px);
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(0);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.news-details blockquote p.rw-pending .rw-word {
+		opacity: 1;
+		filter: none;
+		transform: none;
+	}
+	.news-details blockquote p.rw-in .rw-word {
+		animation: none;
+	}
+}
 .single-post-tags {
 	width: 100%;
 	float: left;

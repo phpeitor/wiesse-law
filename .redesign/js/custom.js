@@ -188,6 +188,67 @@ jQuery(document).ready(function($) {
         $legalVideoRetry.on('click', loadLegalVideo);
     }
 
+    // ------- Mission / Vision word reveal ------- //
+    var $revealTexts = $('.news-details blockquote > p');
+    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if ($revealTexts.length && !prefersReducedMotion && 'IntersectionObserver' in window) {
+        try {
+            $revealTexts.each(function() {
+                splitWordsIntoSpans(this);
+                this.classList.add('rw-pending');
+            });
+
+            var revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.remove('rw-pending');
+                    entry.target.classList.add('rw-in');
+                    revealObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.3 });
+
+            $revealTexts.each(function() {
+                revealObserver.observe(this);
+            });
+        } catch (error) {
+            $revealTexts.each(function() {
+                this.classList.remove('rw-pending');
+            });
+        }
+    }
+
+    function splitWordsIntoSpans(element) {
+        Array.prototype.slice.call(element.childNodes).forEach(function(node) {
+            if (node.nodeType === 3) {
+                if (!node.nodeValue.trim()) return;
+                var fragment = document.createDocumentFragment();
+                node.nodeValue.split(/(\s+)/).forEach(function(part) {
+                    if (!part) return;
+                    if (/^\s+$/.test(part)) {
+                        fragment.appendChild(document.createTextNode(part));
+                        return;
+                    }
+                    var word = document.createElement('span');
+                    word.className = 'rw-word';
+                    word.textContent = part;
+                    fragment.appendChild(word);
+                });
+                element.replaceChild(fragment, node);
+            } else if (node.nodeType === 1) {
+                var wrapper = document.createElement('span');
+                wrapper.className = 'rw-word';
+                element.insertBefore(wrapper, node);
+                wrapper.appendChild(node);
+            }
+        });
+
+        Array.prototype.slice.call(element.querySelectorAll('.rw-word')).forEach(function(word, index) {
+            word.style.setProperty('--rw-delay', (index * 0.05).toFixed(2) + 's');
+        });
+    }
+    // ------- Mission / Vision word reveal End ------- //
+
     // Ensure Bootstrap modal cleanup is complete so the page is restored immediately
     var $volunteerModal = $('#volunteer-modal');
     var $volunteerTrigger = null;
