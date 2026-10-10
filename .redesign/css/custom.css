@@ -4004,18 +4004,72 @@ ul.rep-comments {
 .depart-info .service-grid .deprt-icon-box {
 	flex: 1 1 auto;
 	height: auto;
-	min-height: 225px;
-	padding: 40px;
+	min-height: 330px;
+	padding: 30px 32px 26px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	border: 1px solid rgba(166, 132, 55, .2);
+	background: linear-gradient(150deg, #fff 0%, #fffdf8 100%);
+	box-shadow: 0 10px 28px rgba(31, 31, 49, .08), 0 2px 8px rgba(166, 132, 55, .06);
+	transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .depart-info .service-grid .deprt-icon-box:hover {
-	padding: 40px;
+	padding: 30px 32px 26px;
+	transform: translateY(-5px);
+	border-color: rgba(166, 132, 55, .5);
+	box-shadow: 0 16px 34px rgba(31, 31, 49, .12), 0 4px 12px rgba(166, 132, 55, .1);
+}
+.depart-info .service-grid .deprt-icon-box img {
+	display: block;
+	width: 82px;
+	height: 82px;
+	object-fit: contain;
+	margin: 0 auto 18px;
+	padding: 8px;
+	border-radius: 50%;
+	background: #f8f4e9;
+	box-shadow: 0 0 0 1px rgba(166, 132, 55, .18);
+}
+.depart-info .service-grid .deprt-icon-box h6 {
+	min-height: 44px;
+	margin: 0 0 10px;
+	font-size: 17px;
+	line-height: 23px;
+}
+.depart-info .service-grid .deprt-icon-box h6 a {
+	color: #202338;
+	transition: color .2s ease;
+}
+.depart-info .service-grid .deprt-icon-box:hover h6 a {
+	color: #987526;
+}
+.depart-info .service-grid .service-description {
+	max-width: 370px;
+	margin: 0 auto 18px;
+	color: #666875;
+	font-size: 13px;
+	line-height: 1.7;
 }
 .depart-info .service-grid .deprt-icon-box a.rm {
 	align-self: center;
 	margin-top: auto;
 	opacity: 1;
+	padding: 3px 17px;
+	border: 1px solid #a68437;
+	border-radius: 18px;
+	background: transparent;
+	color: #8a6b25;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .07em;
+	transition: background .2s ease, color .2s ease;
+}
+.depart-info .service-grid .deprt-icon-box a.rm:hover,
+.depart-info .service-grid .deprt-icon-box a.rm:focus {
+	background: #a68437;
+	color: #fff;
 }
 .deprt-sublist {
 	margin: 0;
@@ -4036,7 +4090,7 @@ ul.rep-comments {
 @media (min-width: 768px) and (max-width: 991px) {
 	.depart-info .service-grid .deprt-icon-box,
 	.depart-info .service-grid .deprt-icon-box:hover {
-		padding: 20px;
+		padding: 24px 18px;
 	}
 }
 /* --- Modal detalle de servicio --- */
@@ -4083,6 +4137,22 @@ ul.rep-comments {
 	width: 72px;
 	height: 72px;
 	margin: 0 auto 16px;
+	object-fit: contain;
+}
+.servicio-detalle-icon.servicio-detalle-photo {
+	width: min(100%, 300px);
+	height: 180px;
+	border-radius: 8px;
+	object-fit: cover;
+	box-shadow: 0 5px 18px rgba(30, 30, 45, .12);
+}
+#servicio-detalle .service-detail-description {
+	max-width: 390px;
+	margin: 0 auto 4px;
+	color: #555968;
+	font-size: 14px;
+	line-height: 1.75;
+	text-align: left;
 }
 #servicio-detalle .deprt-sublist {
 	display: block;
@@ -4128,23 +4198,23 @@ ul.rep-comments {
 	text-transform: uppercase;
 }
 .btn-servicio-cta {
-	background: #d94148;
+	background: #a68437;
 	color: #fff;
 }
 .btn-servicio-cta:hover,
 .btn-servicio-cta:focus {
-	background: #40407e;
+	background: #886a27;
 	color: #fff;
 	text-decoration: none;
 }
 .btn-servicio-wa {
 	background: #fff;
-	border-color: #d94148;
-	color: #d94148;
+	border-color: #a68437;
+	color: #8a6b25;
 }
 .btn-servicio-wa:hover,
 .btn-servicio-wa:focus {
-	background: #d94148;
+	background: #a68437;
 	color: #fff;
 	text-decoration: none;
 }
@@ -4160,8 +4230,8 @@ ul.rep-comments {
 		transition: none;
 	}
 }
-a.jobs-link {
-	background: #d94148;
+.depart-info a.jobs-link {
+	background: #a68437;
 	display: block;
 	line-height: 52px;
 	clear: both;
@@ -4173,8 +4243,8 @@ a.jobs-link {
 	font-size: 18px;
 	font-weight: 700;
 }
-a.jobs-link:hover {
-	background: #40407e;
+.depart-info a.jobs-link:hover {
+	background: #886a27;
 	color: #fff;
 }
 ul.reports {
