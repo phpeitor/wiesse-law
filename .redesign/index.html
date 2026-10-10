@@ -831,18 +831,19 @@
                 <button type="button" class="close legal-video-close" data-dismiss="modal" aria-label="Cerrar video">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <button type="button" class="legal-video-retry" aria-label="Reintentar carga del video">
-                    <i class="fas fa-redo" aria-hidden="true"></i><span>Reintentar</span>
+                <button type="button" class="legal-video-retry" aria-label="Reproducir video de nuevo">
+                    <i class="fas fa-redo" aria-hidden="true"></i><span>Reproducir de nuevo</span>
                 </button>
                 <div class="embed-responsive embed-responsive-vert">
-                    <iframe id="legal-video-frame" class="embed-responsive-item"
-                        data-src="https://www.tiktok.com/embed/v2/7588903704720444680"
-                        title="Carlos Wiesse en TikTok" allow="autoplay; encrypted-media; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <video id="legal-video-player" class="embed-responsive-item" controls playsinline preload="metadata"
+                        poster="./images/tiktok.webp" aria-label="Video de Carlos Wiesse">
+                        <source src="./resources/main.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
                 </div>
-                <p class="legal-video-hint">¿El video no reproduce? Pulsa <strong>Reintentar</strong> o
+                <p class="legal-video-hint">También puedes
                     <a href="https://www.tiktok.com/@carlos.wiesse31/video/7588903704720444680" target="_blank"
-                        rel="noopener">ábrelo en TikTok</a>.</p>
+                        rel="noopener noreferrer">verlo en TikTok</a>.</p>
                 <h4 id="legal-video-title" class="sr-only">Carlos Wiesse en TikTok</h4>
             </div>
         </div>

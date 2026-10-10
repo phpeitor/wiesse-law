@@ -223,18 +223,24 @@ jQuery(document).ready(function($) {
     // ------- Close Btn ------- //
 
     var $legalVideoModal = $('#legal-video-modal');
-    var $legalVideoFrame = $('#legal-video-frame');
+    var $legalVideoPlayer = $('#legal-video-player');
     var $legalVideoRetry = $('.legal-video-retry');
-    function loadLegalVideo() {
-        var videoSrc = $legalVideoFrame.data('src');
-        $legalVideoFrame.attr('src', videoSrc + (videoSrc.indexOf('?') > -1 ? '&' : '?') + 'retry=' + new Date().getTime());
+    function replayLegalVideo() {
+        if (!$legalVideoPlayer.length) return;
+        $legalVideoPlayer[0].currentTime = 0;
+        var playback = $legalVideoPlayer[0].play();
+        if (playback && typeof playback.catch === 'function') playback.catch(function() {});
     }
-    if ($legalVideoModal.length && $legalVideoFrame.length) {
-        $legalVideoModal.on('show.bs.modal', loadLegalVideo);
-        $legalVideoModal.on('hidden.bs.modal', function() {
-            $legalVideoFrame.attr('src', 'about:blank');
+    if ($legalVideoModal.length && $legalVideoPlayer.length) {
+        $legalVideoModal.on('shown.bs.modal', function() {
+            var playback = $legalVideoPlayer[0].play();
+            if (playback && typeof playback.catch === 'function') playback.catch(function() {});
         });
-        $legalVideoRetry.on('click', loadLegalVideo);
+        $legalVideoModal.on('hidden.bs.modal', function() {
+            $legalVideoPlayer[0].pause();
+            $legalVideoPlayer[0].currentTime = 0;
+        });
+        $legalVideoRetry.on('click', replayLegalVideo);
     }
 
     // ------- Service detail modal ------- //
