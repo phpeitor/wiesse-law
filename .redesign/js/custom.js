@@ -13,6 +13,31 @@ jQuery(document).ready(function($) {
     }
     // ------- Navigation End ------- //
 
+    // ------- Calendify URL from server environment ------- //
+    var calendifyLinks = document.querySelectorAll('[data-calendify-link]');
+    if (calendifyLinks.length) {
+        fetch('./api/config.php')
+            .then(function(response) {
+                if (!response.ok) throw new Error('No se pudo cargar la configuración de Calendify');
+                return response.json();
+            })
+            .then(function(config) {
+                if (!config.calendifyUrl) throw new Error('CALENDIFY_URL no está configurada');
+                calendifyLinks.forEach(function(link) {
+                    link.href = config.calendifyUrl;
+                });
+            })
+            .catch(function(error) {
+                console.error(error.message);
+                calendifyLinks.forEach(function(link) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                    });
+                });
+            });
+    }
+    // ------- Calendify URL End ------- //
+
     // ------- Active navigation item ------- //
     var $siteNav = $('.h3-navbar .navbar-nav');
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
