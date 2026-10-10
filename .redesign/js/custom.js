@@ -13,6 +13,55 @@ jQuery(document).ready(function($) {
     }
     // ------- Navigation End ------- //
 
+    // ------- Active navigation item ------- //
+    var $siteNav = $('.h3-navbar .navbar-nav');
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var currentHash = window.location.hash;
+
+    function setActiveNavigation() {
+        var activeHash = window.location.hash;
+        $siteNav.children('li').removeClass('active');
+        $siteNav.children('li').each(function() {
+            var $link = $(this).children('a').first();
+            var href = $link.attr('href') || '';
+            // El enlace # del desplegable apunta a la página actual, pero no representa una sección activa.
+            if (href === '#' || href.indexOf('javascript:') === 0) return;
+            var linkUrl;
+            try {
+                linkUrl = new URL(href, window.location.href);
+            } catch (error) {
+                return;
+            }
+            if (linkUrl.origin === window.location.origin &&
+                linkUrl.pathname === window.location.pathname &&
+                ((activeHash && linkUrl.hash === activeHash) || (!activeHash && !linkUrl.hash))) {
+                $(this).addClass('active');
+            }
+        });
+        if (currentPage === 'contacto.html' && !activeHash) {
+            $siteNav.children('li').filter(function() {
+                return $(this).children('a').attr('href') === 'contacto.html';
+            }).addClass('active');
+        }
+    }
+
+    setActiveNavigation();
+    $(window).on('hashchange', setActiveNavigation);
+    // Enlaces a secciones desde otra página también actualizan la selección.
+    $siteNav.on('click', 'a', function() {
+        var href = $(this).attr('href') || '';
+        if (href.indexOf('#') !== -1) {
+            var hash = href.substring(href.indexOf('#'));
+            if (window.location.pathname.endsWith(currentPage)) {
+                setTimeout(function() {
+                    $siteNav.children('li').removeClass('active');
+                    $(this).closest('li').addClass('active');
+                }.bind(this), 0);
+            }
+        }
+    });
+    // ------- Active navigation item End ------- //
+
     // ------- City Location ------- //
     $('.city-exp').on('click keydown', function(event) {
         if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;

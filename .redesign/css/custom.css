@@ -3077,6 +3077,13 @@ li.header-weather {
 .h3-navbar .navbar .navbar-nav>li>a:hover:after {
 	width: 100%;
 }
+.h3-navbar .navbar .navbar-nav>li.active>a {
+	color: #f54337;
+}
+.h3-navbar .navbar .navbar-nav>li.active>a:after {
+	width: 100%;
+	background: #f54337;
+}
 .h3-navbar .navbar .navbar-nav>li.open>a:after {
 	width: 100%;
 }
