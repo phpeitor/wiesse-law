@@ -100,10 +100,11 @@
                     </ul>
                     <ul class="navbar-right">
                         <li class="search-form">
-                            <form class="navbar-form">
-                                <input type="text" class="form-control" placeholder="Buscar">
-                                <button type="submit"><i class="fas fa-search"></i></button>
+                            <form class="navbar-form" data-site-search role="search">
+                                <input type="search" class="form-control" name="q" placeholder="Buscar" aria-label="Buscar en el sitio" autocomplete="off">
+                                <button type="submit" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></button>
                             </form>
+                            <div class="site-search-results" id="site-search-results" role="region" aria-label="Resultados de búsqueda" aria-live="polite" hidden></div>
                         </li>
                         <!--  <li class="donate-btn"><a href="./images/qr.png" class="donate-lightbox"
                             data-rel="prettyPhoto[donation]">Donar</a></li>-->

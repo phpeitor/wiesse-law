@@ -46,6 +46,129 @@ jQuery(document).ready(function($) {
     }
     // ------- Calendify URL End ------- //
 
+    // ------- Site content search ------- //
+    var searchForm = document.querySelector('[data-site-search]');
+    var searchResults = document.getElementById('site-search-results');
+    if (searchForm && searchResults) {
+        var searchInput = searchForm.querySelector('input[name="q"]');
+        var searchIndexPromise;
+
+        function normalizeSearchText(value) {
+            return value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
+        }
+
+        function loadSearchIndex() {
+            if (searchIndexPromise) return searchIndexPromise;
+            searchIndexPromise = Promise.all(['index.html', 'contacto.html'].map(function(path) {
+                return fetch('./' + path).then(function(response) {
+                    if (!response.ok) throw new Error('No se pudo cargar el contenido del sitio.');
+                    return response.text();
+                }).then(function(markup) {
+                    var documentPage = new DOMParser().parseFromString(markup, 'text/html');
+                    return Array.prototype.slice.call(documentPage.querySelectorAll('section[id], #form_contact, .contact-details-two, .subheader'))
+                        .map(function(section) {
+                            var text = (section.textContent || '').replace(/\s+/g, ' ').trim();
+                            if (!text) return null;
+                            var heading = section.querySelector('h1, h2, h3, h4, h5');
+                            return {
+                                title: heading ? heading.textContent.trim() : (section.id === 'form_contact' ? 'Formulario de contacto' : 'Información de contacto'),
+                                text: text,
+                                normalized: normalizeSearchText(text),
+                                href: path + (section.id ? '#' + encodeURIComponent(section.id) : '')
+                            };
+                        }).filter(Boolean);
+                });
+            })).then(function(groups) {
+                return Array.prototype.concat.apply([], groups);
+            });
+            return searchIndexPromise;
+        }
+
+        function renderSearchResults(entries, query) {
+            searchResults.textContent = '';
+            searchResults.hidden = false;
+            if (!entries.length) {
+                var emptyMessage = document.createElement('p');
+                emptyMessage.className = 'site-search-empty';
+                emptyMessage.textContent = 'No encontramos resultados. Prueba con otros términos.';
+                searchResults.appendChild(emptyMessage);
+                return;
+            }
+
+            var heading = document.createElement('p');
+            heading.className = 'site-search-heading';
+            heading.textContent = entries.length + (entries.length === 1 ? ' resultado' : ' resultados') + ' para “' + query + '”';
+            searchResults.appendChild(heading);
+
+            entries.slice(0, 8).forEach(function(entry) {
+                var link = document.createElement('a');
+                link.className = 'site-search-result';
+                link.href = entry.href;
+                var title = document.createElement('strong');
+                title.textContent = entry.title;
+                var excerpt = document.createElement('span');
+                var firstTerm = normalizeSearchText(query).split(' ')[0];
+                var index = entry.normalized.indexOf(firstTerm);
+                var start = index > 55 ? index - 55 : 0;
+                excerpt.textContent = (start ? '…' : '') + entry.text.slice(start, start + 150) + (start + 150 < entry.text.length ? '…' : '');
+                link.appendChild(title);
+                link.appendChild(excerpt);
+                searchResults.appendChild(link);
+            });
+        }
+
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var query = (searchInput.value || '').trim();
+            if (!query) {
+                searchResults.hidden = false;
+                searchResults.textContent = '';
+                var prompt = document.createElement('p');
+                prompt.className = 'site-search-empty';
+                prompt.textContent = 'Escribe una palabra o tema para buscar.';
+                searchResults.appendChild(prompt);
+                searchInput.focus();
+                return;
+            }
+
+            searchResults.hidden = false;
+            searchResults.textContent = '';
+            var loading = document.createElement('p');
+            loading.className = 'site-search-empty';
+            loading.textContent = 'Buscando…';
+            searchResults.appendChild(loading);
+
+            loadSearchIndex().then(function(index) {
+                var terms = normalizeSearchText(query).split(' ').filter(Boolean);
+                var matches = index.filter(function(entry) {
+                    return terms.every(function(term) {
+                        return entry.normalized.indexOf(term) !== -1;
+                    });
+                });
+                renderSearchResults(matches, query);
+            }).catch(function() {
+                searchResults.textContent = '';
+                var errorMessage = document.createElement('p');
+                errorMessage.className = 'site-search-empty';
+                errorMessage.textContent = 'No se pudo realizar la búsqueda. Inténtalo nuevamente.';
+                searchResults.appendChild(errorMessage);
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!searchForm.parentElement.contains(event.target) && !searchResults.contains(event.target)) {
+                searchResults.hidden = true;
+            }
+        });
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') searchResults.hidden = true;
+        });
+        searchResults.addEventListener('click', function(event) {
+            if (event.target.closest('a')) searchResults.hidden = true;
+        });
+    }
+    // ------- Site content search End ------- //
+
     // ------- Contact and newsletter forms ------- //
     document.querySelectorAll('.js-lead-form').forEach(function(form) {
         var feedback = form.querySelector('.form-feedback');
@@ -799,10 +922,10 @@ jQuery(document).ready(function($) {
                     $(this).removeClass('open');
                 }
             });
-            $('form').submit(function(event) {
+            $('#search form').submit(function(event) {
                 event.preventDefault();
                 return false;
-            })
+            });
         });
     }
 
