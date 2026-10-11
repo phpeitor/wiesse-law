@@ -3181,17 +3181,20 @@ li.header-weather {
 	border-left: 1px solid #e1e1e1;
 }
 .volunteer-modal .modal-dialog {
-	width: 700px;
+	width: 620px;
 	max-width: calc(100% - 30px);
-	margin: 80px auto 30px;
+	max-height: calc(100vh - 40px);
+	margin: 40px auto 20px;
 }
 .volunteer-modal .modal-content {
 	position: relative;
+	max-height: calc(100vh - 40px);
+	overflow-y: auto;
 	background: linear-gradient(135deg, #3f3f7f 0%, #2b2c60 100%);
 	border: 0;
 	border-radius: 3px;
 	box-shadow: 0 12px 36px rgba(17, 17, 44, .28);
-	padding: 42px 30px 40px;
+	padding: 30px 26px 28px;
 }
 .volunteer-modal .volunteer-close {
 	position: absolute;
@@ -3219,7 +3222,7 @@ li.header-weather {
 	transform: rotate(90deg);
 }
 .volunteer-modal .volunteer-form-heading {
-	margin-bottom: 22px;
+	margin-bottom: 16px;
 }
 .volunteer-modal .volunteer-form-heading p {
 	margin: 0 0 8px;
@@ -3232,12 +3235,12 @@ li.header-weather {
 .volunteer-modal .volunteer-form-heading h4 {
 	margin: 0;
 	color: #fff;
-	font-size: clamp(26px, 3vw, 40px);
+	font-size: clamp(24px, 2.6vw, 34px);
 	font-weight: 800;
 	line-height: 1.1;
 }
 .volunteer-modal .volunteer-field {
-	margin-bottom: 18px;
+	margin-bottom: 12px;
 }
 .volunteer-modal form > .row {
 	display: flex;
@@ -3248,7 +3251,7 @@ li.header-weather {
 }
 .volunteer-modal .linput {
 	display: block;
-	min-height: 53px;
+	min-height: 48px;
 	line-height: 25px;
 	font-size: 14px;
 	box-sizing: border-box;
@@ -3282,8 +3285,8 @@ li.header-weather {
 	margin-bottom: 36px;
 }
 .volunteer-modal textarea.linput {
-	min-height: 112px;
-	padding-top: 14px;
+	min-height: 88px;
+	padding-top: 12px;
 	resize: vertical;
 }
 .volunteer-modal input[type="date"].linput {
