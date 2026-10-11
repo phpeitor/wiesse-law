@@ -50,6 +50,12 @@ jQuery(document).ready(function($) {
     document.querySelectorAll('.js-lead-form').forEach(function(form) {
         var feedback = form.querySelector('.form-feedback');
 
+        function notifyLeadForm(type, message) {
+            if (window.alertify && typeof window.alertify[type] === 'function') {
+                window.alertify[type](message);
+            }
+        }
+
         function setFieldValidity(field) {
             var valid = field.checkValidity() && field.value.trim() !== '';
             field.classList.toggle('is-invalid', !valid);
@@ -78,8 +84,9 @@ jQuery(document).ready(function($) {
 
             if (invalidFields.length) {
                 invalidFields[0].focus();
+                notifyLeadForm('error', 'Completa los campos resaltados y verifica que tu correo sea válido.');
                 if (feedback) {
-                    feedback.textContent = 'Revisa los campos marcados en rojo.';
+                    feedback.textContent = 'Completa los campos resaltados y verifica que tu correo sea válido.';
                     feedback.className = 'form-feedback is-error';
                 }
                 return;
@@ -115,12 +122,14 @@ jQuery(document).ready(function($) {
                         feedback.textContent = data.message || 'Información enviada correctamente.';
                         feedback.className = 'form-feedback is-success';
                     }
+                    notifyLeadForm('success', data.message || 'Información enviada correctamente.');
                 })
                 .catch(function(error) {
                     if (feedback) {
                         feedback.textContent = error.message || 'Ocurrió un error al enviar el formulario.';
                         feedback.className = 'form-feedback is-error';
                     }
+                    notifyLeadForm('error', error.message || 'Ocurrió un error al enviar el formulario.');
                 })
                 .finally(function() {
                     if (submitButton) submitButton.disabled = false;
