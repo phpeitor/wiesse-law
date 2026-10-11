@@ -15,7 +15,9 @@ jQuery(document).ready(function($) {
 
     // ------- Calendify URL from server environment ------- //
     var calendifyLinks = document.querySelectorAll('[data-calendify-link]');
-    if (calendifyLinks.length) {
+    var whatsappLinks = document.querySelectorAll('[data-config-whatsapp]');
+    var phoneLabels = document.querySelectorAll('[data-config-phone]');
+    if (calendifyLinks.length || whatsappLinks.length || phoneLabels.length) {
         fetch('./api/config.php')
             .then(function(response) {
                 if (!response.ok) throw new Error('No se pudo cargar la configuración de Calendify');
@@ -26,10 +28,16 @@ jQuery(document).ready(function($) {
                 calendifyLinks.forEach(function(link) {
                     link.href = config.calendifyUrl;
                 });
+                whatsappLinks.forEach(function(link) {
+                    link.href = config.whatsapp;
+                });
+                phoneLabels.forEach(function(label) {
+                    label.textContent = config.phone;
+                });
             })
             .catch(function(error) {
                 console.error(error.message);
-                calendifyLinks.forEach(function(link) {
+                Array.prototype.slice.call(calendifyLinks).concat(Array.prototype.slice.call(whatsappLinks)).forEach(function(link) {
                     link.addEventListener('click', function(event) {
                         event.preventDefault();
                     });
@@ -37,6 +45,89 @@ jQuery(document).ready(function($) {
             });
     }
     // ------- Calendify URL End ------- //
+
+    // ------- Contact and newsletter forms ------- //
+    document.querySelectorAll('.js-lead-form').forEach(function(form) {
+        var feedback = form.querySelector('.form-feedback');
+
+        function setFieldValidity(field) {
+            var valid = field.checkValidity() && field.value.trim() !== '';
+            field.classList.toggle('is-invalid', !valid);
+            if (valid) {
+                field.removeAttribute('aria-invalid');
+            } else {
+                field.setAttribute('aria-invalid', 'true');
+            }
+            return valid;
+        }
+
+        form.addEventListener('input', function(event) {
+            if (event.target.matches('input, textarea')) {
+                setFieldValidity(event.target);
+                if (feedback) feedback.textContent = '';
+                if (feedback) feedback.className = 'form-feedback';
+            }
+        });
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fields = Array.prototype.slice.call(form.querySelectorAll('input[required], textarea[required]'));
+            var invalidFields = fields.filter(function(field) {
+                return !setFieldValidity(field);
+            });
+
+            if (invalidFields.length) {
+                invalidFields[0].focus();
+                if (feedback) {
+                    feedback.textContent = 'Revisa los campos marcados en rojo.';
+                    feedback.className = 'form-feedback is-error';
+                }
+                return;
+            }
+
+            var submitButton = form.querySelector('[type="submit"]');
+            var payload = Object.fromEntries(new FormData(form).entries());
+            payload.type = form.dataset.formType;
+            if (submitButton) submitButton.disabled = true;
+            if (feedback) {
+                feedback.textContent = 'Enviando…';
+                feedback.className = 'form-feedback';
+            }
+
+            fetch('./api/save-form.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(function(response) {
+                    return response.json().then(function(data) {
+                        if (!response.ok) throw new Error(data.error || 'No se pudo guardar el formulario.');
+                        return data;
+                    });
+                })
+                .then(function(data) {
+                    form.reset();
+                    fields.forEach(function(field) {
+                        field.classList.remove('is-invalid');
+                        field.removeAttribute('aria-invalid');
+                    });
+                    if (feedback) {
+                        feedback.textContent = data.message || 'Información enviada correctamente.';
+                        feedback.className = 'form-feedback is-success';
+                    }
+                })
+                .catch(function(error) {
+                    if (feedback) {
+                        feedback.textContent = error.message || 'Ocurrió un error al enviar el formulario.';
+                        feedback.className = 'form-feedback is-error';
+                    }
+                })
+                .finally(function() {
+                    if (submitButton) submitButton.disabled = false;
+                });
+        });
+    });
+    // ------- Contact and newsletter forms End ------- //
 
     // ------- Active navigation item ------- //
     var $siteNav = $('.h3-navbar .navbar-nav');

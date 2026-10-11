@@ -204,7 +204,7 @@
                                  <div class="panel-heading" role="tab" id="headingOne">
                                     <h6 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Pregrado y Posgrado - USAT </a> </h6>
                                  </div>
-                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false">
                                     <div class="panel-body"> 
                                          <div class="gallery-thumb"> <a href="images/u4.png" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="images/u4.png" alt=""> </div>
                                     </div>
@@ -214,7 +214,7 @@
                                  <div class="panel-heading" role="tab" id="headingTwo">
                                     <h6 class="panel-title"> <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> Posgrado - Universidad de Salamanca </a> </h6>
                                  </div>
-                                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="true" style="height: 0px;">
+                                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="true">
                                     <div class="panel-body"> 
                                         <div class="gallery-thumb lightbox-ready"> <a href="images/u2.png" data-rel="prettyPhoto[gallery]" aria-label="Ampliar diploma de la Universidad de Salamanca"><i class="fas fa-search"></i></a> <img src="images/u2.png" alt="Diploma de la Universidad de Salamanca"> </div>
                                     </div>
@@ -225,7 +225,7 @@
                                  <div class="panel-heading" role="tab" id="headingThree">
                                     <h6 class="panel-title"> <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Maestría - Universidad de San Martín</a> </h6>
                                  </div>
-                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
                                     <div class="panel-body"> 
                                         <div class="gallery-thumb lightbox-ready"> <a href="images/u5.png" data-rel="prettyPhoto[gallery]" aria-label="Ampliar diploma de la Universidad de Salamanca"><i class="fas fa-search"></i></a> <img src="images/u5.png" alt="Diploma de la Universidad de Salamanca"> </div>
                                     </div>
@@ -309,18 +309,18 @@
                                     <!--Panel Start-->
                                     <div class="panel">
                                         <div class="panel-heading" role="tab" id="headingServ1">
-                                            <h6> <a class="collapsed" role="button" data-toggle="collapse"
+                                            <h6> <a role="button" data-toggle="collapse"
                                                     data-parent="#servicios-accordion" href="#collapseServ1"
-                                                    aria-expanded="false" aria-controls="collapseServ1">
+                                                    aria-expanded="true" aria-controls="collapseServ1">
                                                     Mesa de consultas </a> </h6>
                                         </div>
-                                        <div id="collapseServ1" class="panel-collapse collapse" role="tabpanel"
+                                        <div id="collapseServ1" class="panel-collapse collapse in" role="tabpanel"
                                             aria-labelledby="headingServ1">
                                             <div class="panel-body">
                                                 <ul>
                                                     <li> <i class="fas fa-user-tie"></i> Dr. Carlos Wiesse</li>
                                                     <li> <i class="far fa-building"></i> Chiclayo, Perú</li>
-                                                    <li> <i class="fas fa-phone"></i> 971 056 719</li>
+                                                    <li> <i class="fas fa-phone"></i> <span data-config-phone></span></li>
                                                     <li> <i class="fas fa-envelope"></i> contacto@wiesse.com.pe</li>
                                                 </ul>
                                             </div>
@@ -376,7 +376,7 @@
                                             aria-labelledby="heading4">
                                             <div class="panel-body">
                                                 <ul>
-                                                    <li> <i class="fas fa-phone"></i> 971 056 719</li>
+                                                    <li> <i class="fas fa-phone"></i> <span data-config-phone></span></li>
                                                     <li> <i class="fas fa-envelope"></i> contacto@wiesse.com.pe</li>
                                                 </ul>
                                             </div>
@@ -394,7 +394,7 @@
                                             aria-labelledby="heading5">
                                             <div class="panel-body">
                                                 <ul>
-                                                    <li> <i class="fas fa-phone"></i> 971 056 719</li>
+                                                    <li> <i class="fas fa-phone"></i> <span data-config-phone></span></li>
                                                     <li> <i class="fas fa-envelope"></i> contacto@wiesse.com.pe</li>
                                                 </ul>
                                             </div>
@@ -778,30 +778,31 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-5">
-                            <div class="newsletter-form">
+                            <form class="newsletter-form js-lead-form" data-form-type="newsletter" novalidate>
                                 <h5>Mantente actualizado con nosotros</h5>
                                 <ul class="row">
                                     <li class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Tu nombre">
+                                        <input type="text" class="form-control" name="name" placeholder="Tu nombre" autocomplete="name" maxlength="120" required>
                                     </li>
                                     <li class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Correo electrónico">
+                                        <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" maxlength="254" required>
                                     </li>
                                     <li class="col-md-6">
                                         <p>Recibe novedades legales, análisis y recomendaciones para tu negocio o familia.</p>
                                     </li>
                                     <li class="col-md-6">
-                                        <button>Suscribirme</button>
+                                        <button type="submit">Suscribirme</button>
                                     </li>
                                 </ul>
-                            </div>
+                                <p class="form-feedback" role="status" aria-live="polite"></p>
+                            </form>
                         </div>
                         <div class="col-md-6 col-sm-7">
                             <div class="e-numbers">
                                 <h5>Experiencia y resultados</h5>
                                 <p>Solidez, confianza y acompañamiento en decisiones legales.</p>
                                 <div class="info-num"> <strong>Llámanos</strong>
-                                    <h3>971 056 719</h3>
+                                    <h3 data-config-phone></h3>
                                 </div>
                                 <ul class="row">
                                     <li class="col-md-4 col-sm-4">
@@ -868,7 +869,7 @@
                 <div class="modal-footer">
                     <a class="btn-servicio btn-servicio-cta" href="#" data-calendify-link target="_blank"
                         rel="noopener">Agendar consulta</a>
-                    <a class="btn-servicio btn-servicio-wa" href="https://wa.me/51971056719" target="_blank"
+                    <a class="btn-servicio btn-servicio-wa" href="#" data-config-whatsapp target="_blank"
                         rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
                 </div>
             </div>
@@ -892,7 +893,7 @@
     </div>
 
     <div class="floating-actions" aria-label="Acciones rápidas">
-        <a class="floating-action floating-action-whatsapp" href="https://wa.me/51971056719" target="_blank"
+        <a class="floating-action floating-action-whatsapp" href="#" data-config-whatsapp target="_blank"
             rel="noopener" aria-label="Escribir por WhatsApp" data-tooltip="Escribir por WhatsApp">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span>WhatsApp</span>

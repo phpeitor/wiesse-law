@@ -6136,6 +6136,29 @@ div#filters {
 	border-radius: 3px;
 	min-height: 180px;
 }
+.js-lead-form .is-invalid,
+.js-lead-form .is-invalid:focus {
+	border: 1px solid #d94148 !important;
+	box-shadow: 0 0 0 3px rgba(217, 65, 72, .14) !important;
+	outline: 0;
+}
+.form-feedback:empty {
+	display: none;
+}
+.form-feedback {
+	margin: 12px 0 0;
+	font-size: 14px;
+}
+.form-feedback.is-error {
+	color: #b4232b;
+}
+.form-feedback.is-success {
+	color: #176b3a;
+}
+.js-lead-form [type="submit"]:disabled {
+	cursor: wait;
+	opacity: .7;
+}
 .contact-form input[type="submit"] {
 	background: #40407e;
 	border: 0px;

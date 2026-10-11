@@ -55,7 +55,7 @@
                         <div class="add-box-2 br">
                            <i class="fas fa-phone"></i>
                            <h5>Llámamanos</h5>
-                           <p>Consultas: 971 056 719</p>
+                            <p>Consultas: <span data-config-phone></span></p>
                            <p>Lunes a viernes, 9:00 a. m. - 6:00 p. m.</p>
                         </div>
                      </div>
@@ -79,25 +79,26 @@
                      <div class="col-md-4 col-sm-5">
                         <h3 class="stitle">Solicita una consulta</h3>
                         <div class="contact-form">
-                           <form>
-                              <ul>
-                                 <li>
-                                    <input type="text" placeholder="Nombre Completo" required="">
-                                 </li>
-                                 <li>
-                                    <input type="email" placeholder="Correo Electrónico" required="">
-                                 </li>
-                                 <li>
-                                    <input type="text" placeholder="Asunto de la consulta">
-                                 </li>
-                                 <li>
-                                    <textarea placeholder="Cuéntanos brevemente cómo podemos ayudarte"></textarea>
-                                 </li>
-                                 <li>
-                                    <input type="submit" value="Enviar consulta">
-                                 </li>
-                              </ul>
-                           </form>
+                            <form class="js-lead-form" data-form-type="contact" novalidate>
+                               <ul>
+                                  <li>
+                                     <input type="text" name="name" placeholder="Nombre Completo" autocomplete="name" maxlength="120" required>
+                                  </li>
+                                  <li>
+                                     <input type="email" name="email" placeholder="Correo Electrónico" autocomplete="email" maxlength="254" required>
+                                  </li>
+                                  <li>
+                                     <input type="text" name="subject" placeholder="Asunto de la consulta" maxlength="160" required>
+                                  </li>
+                                  <li>
+                                     <textarea name="message" placeholder="Cuéntanos brevemente cómo podemos ayudarte" maxlength="5000" required></textarea>
+                                  </li>
+                                  <li>
+                                     <input type="submit" value="Enviar consulta">
+                                  </li>
+                               </ul>
+                               <p class="form-feedback" role="status" aria-live="polite"></p>
+                            </form>
                         </div>
                      </div>
                      <div class="col-md-8 col-sm-7">
