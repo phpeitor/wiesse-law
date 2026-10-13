@@ -1,6 +1,19 @@
 jQuery(document).ready(function($) {
     "use strict"
 
+    var lastAlertKey = '';
+    var lastAlertTime = 0;
+    function showAlertifyOnce(type, message) {
+        if (!window.alertify || typeof window.alertify[type] !== 'function') return;
+        var alertKey = type + ':' + message;
+        var now = Date.now();
+        if (alertKey === lastAlertKey && now - lastAlertTime < 1800) return;
+        lastAlertKey = alertKey;
+        lastAlertTime = now;
+        if (typeof window.alertify.dismissAll === 'function') window.alertify.dismissAll();
+        window.alertify[type](message);
+    }
+
     document.getElementById("current-year").textContent = new Date().getFullYear();
 
     // ------- Navigation ------- //
@@ -174,9 +187,7 @@ jQuery(document).ready(function($) {
         var feedback = form.querySelector('.form-feedback');
 
         function notifyLeadForm(type, message) {
-            if (window.alertify && typeof window.alertify[type] === 'function') {
-                window.alertify[type](message);
-            }
+            showAlertifyOnce(type, message);
         }
 
         function setFieldValidity(field) {
@@ -613,9 +624,7 @@ jQuery(document).ready(function($) {
         setBirthDateLimit();
 
         function showVolunteerAlert(type, message) {
-            if (window.alertify && typeof window.alertify[type] === 'function') {
-                window.alertify[type](message);
-            }
+            showAlertifyOnce(type, message);
         }
 
         function markInvalidFields() {
@@ -642,12 +651,13 @@ jQuery(document).ready(function($) {
 
         $volunteerForm.on('submit', function(event) {
             event.preventDefault();
+            var $submitButton = $volunteerForm.find('button[type="submit"]');
+            if ($submitButton.prop('disabled')) return;
             if (!markInvalidFields()) {
                 showVolunteerAlert('error', 'Completa correctamente todos los campos obligatorios.');
                 return;
             }
 
-            var $submitButton = $volunteerForm.find('button[type="submit"]');
             var $formStatus = $('#volunteer-form-status');
             var formData = {};
             $volunteerForm.serializeArray().forEach(function(field) {
