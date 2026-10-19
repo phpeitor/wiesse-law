@@ -1,0 +1,2 @@
+RedirectMatch 403 ^/\.env(?:\..*)?$
+RedirectMatch 403 ^/storage(?:/.*)?$
