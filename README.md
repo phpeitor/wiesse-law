@@ -28,31 +28,26 @@ El rediseño incluye:
 
 ## Requisitos
 
-- Apache 2.4 con `mod_alias` y soporte para archivos `.htaccess`.
 - PHP 8.1 o posterior, con extensiones `mbstring` y `curl` habilitadas.
 - Permisos de escritura para que PHP cree y actualice `.redesign/storage/`.
 - Navegador moderno con soporte para `fetch`, `FormData` y `URL`.
 
-El sitio no debe abrirse con `file://`: los formularios, la configuración del entorno y algunos componentes requieren Apache y PHP.
+El proyecto no depende de un servidor web ni de un framework en particular. Puede publicarse con el servidor que el equipo ya utilice —incluido un entorno Laravel si se configura para servir esta carpeta y ejecutar sus endpoints PHP—. La aplicación no usa Laravel internamente. No abras el sitio con `file://`: los formularios, la configuración y otros componentes requieren ejecución de PHP y peticiones HTTP.
 
 ## Puesta en marcha local
 
-1. Clona el repositorio y colócalo bajo el document root de Apache, por ejemplo `htdocs/wiesse-law/`.
+1. Clona el repositorio y decide qué servidor o entorno local utilizar para servir `.redesign/` y ejecutar PHP.
 2. Configura las variables de `.redesign/.env` tomando como referencia `.redesign/.env.example`. No subas credenciales ni secretos al repositorio.
-3. Confirma que Apache puede leer el archivo de entorno y escribir en `.redesign/storage/`.
-4. Abre el rediseño en el navegador:
+3. Confirma que el proceso PHP puede leer el archivo de entorno y escribir en `.redesign/storage/`, y que el servidor no publique directamente esos archivos.
+4. Como opción sencilla, desde la raíz del repositorio puedes iniciar el servidor integrado de PHP:
 
-   ```text
-   http://localhost/wiesse-law/.redesign/
+   ```bash
+   php -S 127.0.0.1:8000 -t .redesign
    ```
 
-   Para acceder directamente a Contacto:
+   Abre `http://127.0.0.1:8000/`; la página de contacto está en `http://127.0.0.1:8000/contacto.html`.
 
-   ```text
-   http://localhost/wiesse-law/.redesign/contacto.html
-   ```
-
-Las rutas del sitio están planteadas en relación con `.redesign/`; sirve esa carpeta desde Apache sin mover sus subdirectorios.
+Las rutas del frontend son relativas a `.redesign/`. Al usar otro servidor, configura su document root o su publicación para conservar esas rutas y permitir la ejecución de `api/*.php`.
 
 ## Configuración de entorno
 
@@ -103,9 +98,25 @@ Los fragmentos compartidos `head.html`, `footer.html` y `modal_form.html` se ins
 - Suscripción: el mismo endpoint guarda suscriptores en `storage/newsletter-subscribers.json` y evita duplicados por correo.
 - Voluntariado: `api/save-volunteer.php` valida los datos y escribe en `storage/volunteers.json`.
 - Los endpoints crean el directorio de almacenamiento cuando hace falta y usan bloqueo de archivo durante la escritura.
-- `.redesign/.htaccess` impide solicitar `.env` y archivos de `storage/` directamente por HTTP.
+- Protege `.redesign/.env` y `.redesign/storage/` contra solicitudes HTTP directas. La configuración del servidor elegido debe aplicar esa restricción; las reglas `.htaccess` incluidas solo tienen efecto en servidores que las soporten.
 
 No expongas datos de formularios en páginas públicas ni registres credenciales en el control de versiones. Conserva copias de seguridad de los JSON de producción según la política de operación del sitio.
+
+## Flujo de la aplicación
+
+```mermaid
+flowchart TD
+    U[Visitante] --> P[Páginas HTML en .redesign]
+    P --> A[CSS y JavaScript del frontend]
+    A --> C[api/config.php]
+    C --> E[(Variables privadas en .redesign/.env)]
+    A -->|Formulario de contacto| F[api/save-form.php]
+    A -->|Suscripción| F
+    A -->|Solicitud de voluntariado| V[api/save-volunteer.php]
+    A -->|Consulta de DNI y clima| X[Endpoints PHP correspondientes]
+    F --> J[(JSON en .redesign/storage)]
+    V --> J
+```
 
 ## Convenciones de desarrollo
 
@@ -127,7 +138,7 @@ node --check .redesign/js/custom.js
 git diff --check
 ```
 
-Prueba también en Apache el envío válido e inválido de los formularios, las respuestas de los endpoints y que los archivos bajo `storage/` no sean descargables desde el navegador.
+Prueba en el servidor elegido el envío válido e inválido de los formularios, las respuestas de los endpoints y que los archivos bajo `storage/` no sean descargables desde el navegador.
 
 ## Contexto para contribuciones
 
