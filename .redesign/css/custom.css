@@ -3260,6 +3260,9 @@ li.header-weather {
 	position: absolute;
 	right: 18px;
 	top: 14px;
+	z-index: 10;
+	cursor: pointer;
+	pointer-events: auto;
 	background: rgba(255,255,255,.08);
 	border: 1px solid rgba(255,255,255,.18);
 	color: #fff;
