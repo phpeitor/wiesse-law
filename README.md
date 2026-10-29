@@ -4,7 +4,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
 <a href="https://www.instagram.com/amvsoft.tech/">
-  <img src="https://gramotech.net/html/balad/images/rec-event1.jpg" alt="Instagram" width="700">
+  <img src="https://gramotech.net/html/balad/images/rec-event4.jpg" alt="Instagram" width="700">
 </a>
 
 Wiesse & Consultores es el sitio institucional de una firma legal. La versión vigente y el foco de mantenimiento están en **[`.redesign/`](.redesign/)**, una renovación integral de la experiencia web con páginas, componentes compartidos, recursos visuales y endpoints PHP.
