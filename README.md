@@ -7,15 +7,11 @@
   <img src="https://gramotech.net/html/balad/images/rec-event1.jpg" alt="Instagram" width="700">
 </a>
 
-## Resumen ejecutivo
-
 Wiesse & Consultores es el sitio institucional de una firma legal. La versión activa del sitio y el foco del desarrollo actual están en **[`.redesign/`](.redesign/)**: una renovación completa de la experiencia web, con páginas, componentes, estilos, scripts, recursos y endpoints propios.
 
 Los archivos de la raíz corresponden a una versión anterior. Para ejecutar, mantener o ampliar el rediseño, trabaja dentro de `.redesign/` y conserva allí sus rutas relativas.
 
 ## Rediseño web
-
-El rediseño incluye:
 
 - Página principal con secciones de estudio, servicios, equipo, actualidad y contacto.
 - Página de contacto con mapa y formulario de consultas.
