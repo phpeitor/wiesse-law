@@ -4624,6 +4624,34 @@ ul.reports a i {
 	margin-right: 10px;
 }
 .community-links-style-two li a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-height: 45px;
+	line-height: 1.35;
+}
+.community-links-style-two li a .practice-icon {
+	display: inline-flex;
+	flex: 0 0 42px;
+	width: 42px;
+	height: 42px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: #40407e;
+	color: #fff;
+	font-size: 17px;
+	transition: background-color .2s ease, color .2s ease;
+}
+.community-links-style-two li a:hover .practice-icon,
+.community-links-style-two li a:focus .practice-icon {
+	background: #a68437;
+	color: #fff;
+}
+.community-links-style-two li a span {
+	flex: 1 1 auto;
+}
+.community-links-style-two li a {
 	font-size: 16px;
 	font-weight: 600;
 	color: #444444;
@@ -4633,6 +4661,11 @@ ul.reports a i {
 }
 .community-links-style-two li a:hover img {
 	background: #d94148;
+}
+@media (max-width: 767px) {
+	.community-links-style-two li {
+		width: 100%;
+	}
 }
 .h3-team-box {
 	position: relative;
